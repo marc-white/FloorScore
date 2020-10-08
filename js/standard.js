@@ -79,9 +79,9 @@ function resetGame() {
 //        onStart: function () {
 //            // console.log('Inside onStart');
 //        },
-        complete: function () {
+        complete: function (playSound = true) {
             // console.log('Inside onComplete');
-            lowLag.play('buzzer');
+            if (playSound) { lowLag.play('buzzer'); }
 //            setTimeout(function () {console.log('Game done'); }, 1000);
             if (period >= noPeriods && isPlay) {
                 this.stop();
@@ -103,7 +103,7 @@ function resetGame() {
                     newTime = 0.;
                 }
                 // $('#match-period').html(period-1+' (break)');
-                $('#match-period').html(period+' next...');
+                $('#match-period').html(period+' next (period break)');
             } else {
                 isPlay = true;
                 newTime = lenPeriod * 60. * 1000.;
@@ -323,23 +323,31 @@ function alterAwayScore (inc) {
 }
 
 function alterPeriod(inc) {
+   if (inc == 0) { return ;} // No action needed
    var wasGoing = MatchClockTock.go
    if (wasGoing) {
-     MatchClockTock.pause();
+     toggleClock(MatchClockTock);
    }
     var conf = confirm("Are you sure? You don't need to alter the period manually unless there has been an error")
     if (conf) {
-        if ((period+inc <= noPeriods) && (period+inc > 0)) {
-            period += inc;
-            if (isPlay) {
-                $('#match-period').text(period);
-            } else {
-                $('#match-period').html(period+' next...');
+        if (inc > 0) {
+            // Just fire the clock completion
+            MatchClockTock.complete(false);
+        } else {
+            // Need to take the period counter back N whole periods (play + break), then fire complete
+            if (period + inc + 1 > 1) {
+                console.log("period was " + period);
+                period += inc;
+                console.log("period is now " + period);
+                toggleClock(MatchClockTock);
+                MatchClockTock.complete(false);
             }
         }
     }
-    if (wasGoing) {
-        MatchClockTock.pause();
+
+   // Hold the clock after a change
+    if (MatchClockTock.go) {
+        toggleClock(MatchClockTock);
     }
 }
 

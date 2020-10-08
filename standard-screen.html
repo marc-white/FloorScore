@@ -56,7 +56,7 @@ $( document ).ready(function () {
             if (i < currPerInt) {
                 box.addClass('period-box-complete');
             } else if (currPerInt == i) {
-                if (currPer.includes('next')) {
+                if (currPer.includes('break')) {
                     box.addClass('period-box-next');
                     // console.log('Looking for ' + '#period-arrow-' + (i-1) + '-' + i);
                     let perArrowNow = $('#period-arrow-' + (i-1) + '-' + i);
