@@ -33,9 +33,9 @@
         <td><input type='button' value='-10 sec' onclick='MatchClockTock.alterTime(-10.)' /></td>
         <td><input type='button' value='-1 sec' onclick='MatchClockTock.alterTime(-1.)' /></td>
         <td><input type='button' value='-0.1 sec' onclick='MatchClockTock.alterTime(-0.1)' /></td></tr>
-    <tr><td><input type='button' value='+ period' onclick='alterPeriod(1)' /></td>
-        <td><input type='button' value='- period' onclick='alterPeriod(-1)' /></td></tr>
-    <tr><td colspan=3><input type='button' value='End game/reset system' onclick='resetGameManual()' /></td></tr>
+    <tr><td><input type='button' value='Next per.' onclick='alterPeriod(1)' /></td>
+        <td><input type='button' value='Prev per.' onclick='alterPeriod(-1)' /></td></tr>
+    <tr><td colspan=3><input type='button' value='End game/reset system' onclick='resetGameManual(MatchClockTock)' /></td></tr>
     </table>
         No periods: <select id='match-timer-no-periods'></select><br />
         Len. period: <select id='match-timer-len-period'></select><br />

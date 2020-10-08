@@ -41,11 +41,11 @@ html, body {
     line-height: 30vh;
     font-family: "Lucida Console", monospace;
     font-size: 30vh;
-    background: none;
     text-align: center;
     color: white;
     background: rgb(30,30,30);
     border: 2px solid rgb(30,30,30);
+    border-radius: 2vh;
 }
 
 #timerRedundant {
@@ -60,17 +60,19 @@ html, body {
     /*height: 20vh;*/
     position: absolute;
     left: 25vw;
-    top: 35vh;
+    top: 38vh;
     /*background: cyan;*/
     text-align: center;
     color: white;
     font-weight: bold;
+    padding: 0;
+    margin: 0;
 }
 
-#match-period::before {
-    content: "Period: ";
-    font-weight: normal;
-}
+/*#match-period::before {*/
+/*    content: "Period: ";*/
+/*    font-weight: normal;*/
+/*}*/
 
 .bgimage {
     background-position: center !important;
@@ -123,6 +125,7 @@ div.team-logo {
     position: absolute;
     top: 15vh;
     height: 40vh !important;
+    border-radius: 2vh 2vh 0vh 0vh;
 }
 
 div.team-score {
@@ -131,6 +134,7 @@ div.team-score {
     top: 55vh;
     height: 40vh !important;
     box-sizing: content-box;
+    border-radius: 0 0 2vh 2vh;
 }
 
 #team-img-home, #team-score-home, #team-name-home {
@@ -178,4 +182,52 @@ div.team-score {
 #advertising-space {
     /*background: cyan;*/
     background-size: 78% !important;
+}
+
+/* Period boxes */
+
+.period-box {
+    border-radius: 2vh;
+    border: 2px solid dimgray;
+    box-sizing: border-box;
+    background: black;
+    color: dimgray;
+    /*height: 90%;*/
+    line-height: 100%;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 2vh 2vh 0 2vh;
+}
+
+.period-box-next {
+    border-color: white;
+    color: white;
+}
+
+.period-box-active {
+    background: white;
+    border-color: white;
+    color: black;
+}
+
+.period-box-complete {
+    background: rgb(45,45,45);
+    border-color: rgb(45,45,45);
+    color: black;
+}
+
+.period-arrow {
+    display: inline-block;
+    vertical-align: middle;
+    color: black;
+    background: black;
+    font-weight: lighter;
+    font-size: 37%;
+    /*font-stretch: condensed;*/
+    margin: 0;
+    padding: 0;
+}
+
+.period-arrow-visible {
+    color: white;
 }

@@ -35,14 +35,61 @@ $( document ).ready(function () {
         timerDisp.css('border', '2px solid ' + currBorder );
         $('#match-timer #timerColon').css('color', currBorder) ;
 
-        var currPer = window.opener.$('#match-period').html();
-        // console.log(currTime)
-        $('#match-period').html( currPer );
+        // console.log('Updating current period...');
+        let noPeriods = parseInt(window.opener.$("#match-timer-no-periods").val());
+        console.log('No. periods at reset: ' + noPeriods);
+        let currPer = window.opener.$('#match-period').html();
+        console.log('Current period at reset: ' + currPer);
+        for (let i = 1; i <= noPeriods; i++) {
+            let box = $('#period-' + i);
+            box.removeClass().addClass('period-box');
+            let currPerInt = parseInt(currPer);
+            if (i < currPerInt) {
+                box.addClass('period-box-complete');
+            } else if (currPerInt == i) {
+                if (currPer.includes('next')) {
+                    box.addClass('period-box-next');
+                    // console.log('Looking for ' + '#period-arrow-' + (i-1) + '-' + i);
+                    let perArrowNow = $('#period-arrow-' + (i-1) + '-' + i);
+                    perArrowNow.addClass('period-arrow-visible');
+                } else {
+                    box.addClass('period-box-active');
+                    $('.period-arrow').removeClass('period-arrow-visible');
+                }
+            }
+        }
+
+        formatScreen();
     }
     observer = new MutationObserver(updateTimer);
     // Do an initial update on open
     updateTimer();
     observer.observe(targetNode, observerConfig);
+
+    // Read and implement number of match periods
+    // Only re-write period boxes on selector change
+    function updateNoPeriods () {
+        matchPeriod = $('#match-period');
+        matchPeriod.html('');
+        noPeriods = parseInt(window.opener.$("#match-timer-no-periods").val());
+        // console.log('noPeriods = ' + noPeriods);
+        for (let i = 1; i <= noPeriods; i++) {
+            matchPeriod.append("<div id='period-" + i + "' class='period-box'>" + i + "</div>");
+            if (i < noPeriods) {
+                matchPeriod.append("<div id='period-arrow-" + i + "-" + (i+1) + "' class='period-arrow'>&#10095;</div>")
+            }
+        }
+        let adverts = $('#advertising');
+        if (noPeriods > 5) {
+            adverts.css('visibility', 'hidden');
+        } else {
+            adverts.css('visibility', 'visible');
+        }
+        updateTimer();
+        formatScreen();
+    }
+    updateNoPeriods();
+    window.opener.$('#match-timer-no-periods').change(updateNoPeriods);
 
     function updateScores () {
         var homeScore, awayScore, homeImg, awayImg;
@@ -59,7 +106,7 @@ $( document ).ready(function () {
         homeScore.attr('style', currHomeScoreStyle);
         var currHomeScore = window.opener.$('#team-score-home').text();
         homeScore.text( currHomeScore );
-        console.log(homeScore.attr('style'));
+        // console.log(homeScore.attr('style'));
         homeImg.css('color', homeScore.css('color'));
 
         var currAwayName = window.opener.$('#team-away option:selected').text();

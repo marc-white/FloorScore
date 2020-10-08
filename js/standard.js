@@ -176,7 +176,8 @@ function resetGame() {
 
 }
 
-function resetGameManual() {
+function resetGameManual(clock) {
+    if (clock.go) { toggleClock(clock); }
     var confirmReset = confirm('Are you sure? This will remove all current game information...');
     if (confirmReset) {
         resetGame();
@@ -260,7 +261,7 @@ function populateSelects () {
     // for (i=1; i<=10; i++) {
     //     $perLen.append($('<option></option>').val(i).html(i))
     // }
-    populateSelect('#match-timer-no-periods', 1, 10);
+    populateSelect('#match-timer-no-periods', 1, 9);
     populateSelect('#match-timer-len-period', 1, 30);
     populateSelect('#match-timer-len-break', 1, 15);
 }
@@ -322,7 +323,7 @@ function alterAwayScore (inc) {
 }
 
 function alterPeriod(inc) {
-    var wasGoing = MatchClockTock.go
+   var wasGoing = MatchClockTock.go
    if (wasGoing) {
      MatchClockTock.pause();
    }
