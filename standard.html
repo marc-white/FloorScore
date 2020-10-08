@@ -20,8 +20,8 @@
     Period: <span id="match-period">Waiting for start</span><br />
     <form id="match-timer-form">
     <table>
-    <tr><td colspan=3>
-        <button type='button' onclick='startGame();toggleClock(MatchClockTock);' id='clock-toggle'>Resume/Pause Time<br /><small style="background-color:yellow">(Spacebar)</small></button></td>
+    <tr><td colspan=4>
+        <button type='button' onclick='startGame();toggleClock(MatchClockTock);' id='clock-toggle' style="width: 100%;">Resume/Pause Time<br /><small style="background-color:yellow">(Spacebar)</small></button></td>
         <!-- <input type='button' value='Stop/Reset' onclick='MatchClock.resetCountdown();' /><br /> -->
         <!-- <input type='text' name='startTime' value='900' style='width:30px;' /><br /> -->
     <tr><td><input type='button' value='+1 min' onclick='MatchClockTock.alterTime(60.)' /></td>
@@ -93,6 +93,9 @@ Team: <select id='team-away'>
 <div style='clear:both;'>
 <button id='window-open'>Open external display</button>
 </div>
+
+<p><g style="background-color: yellow">Highlighted text</g> shows the keyboard shortcuts than can be
+used instead of the mouse to perform certain actions.</p>
 
 </body>
 
