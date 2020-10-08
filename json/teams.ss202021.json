@@ -1,0 +1,26 @@
+{
+    "pirates":
+        {
+            "name":"Pirates",
+            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "img-clr":"teal",
+            "bg-clr":"teal",
+            "tx-clr":"white"
+        },
+    "testeagles":
+        {
+            "name":"Test Eagles",
+            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "img-clr":"black",
+            "bg-clr":"black",
+            "tx-clr":"white"
+        },
+    "schooneytunes":
+        {
+            "name":"Schooney Tunes",
+            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
+            "img-clr":"white",
+            "bg-clr":"white",
+            "tx-clr":"black"
+        }
+}
