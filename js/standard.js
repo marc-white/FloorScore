@@ -367,7 +367,7 @@ $( document ).ready(function () {
 
     teamdata = {};
     [
-    "./json/teams.colours.json"
+    "./json/teams.ss202021.json"
     ].forEach(function (i) {
         ($.getJSON(i, function (json) { 
             // // console.log('Have team JSON!');
