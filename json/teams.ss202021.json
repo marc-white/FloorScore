@@ -7,7 +7,7 @@
             "bg-clr":"teal",
             "tx-clr":"white"
         },
-    "testeagles":
+    "test-eagles":
         {
             "name":"Test Eagles",
             "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
@@ -15,12 +15,28 @@
             "bg-clr":"black",
             "tx-clr":"white"
         },
-    "schooneytunes":
+    "schooney-tunes":
         {
             "name":"Schooney Tunes",
             "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
             "img-clr":"white",
             "bg-clr":"white",
             "tx-clr":"black"
-        }
+        },
+    "running-with-intent":
+    {
+        "name":"Running With Intent",
+        "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
+        "img-clr":"orange",
+        "bg-clr":"orange",
+        "tx-clr":"black"
+    },
+    "dry-reachers":
+    {
+        "name":"Dry Reachers",
+        "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+        "img-clr":"dodgerblue",
+        "bg-clr":"dodgerblue",
+        "tx-clr":"white"
+    }
 }
