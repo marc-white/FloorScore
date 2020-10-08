@@ -35,8 +35,8 @@
     {
         "name":"Dry Reachers",
         "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
-        "img-clr":"dodgerblue",
-        "bg-clr":"dodgerblue",
+        "img-clr":"black",
+        "bg-clr":"black",
         "tx-clr":"white"
     }
 }
