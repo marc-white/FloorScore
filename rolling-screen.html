@@ -66,6 +66,10 @@ $( document ).ready(function () {
     observerTeams.observe(targetNodeTeams, observerConfig);
 
     updateScores();
+
+    $( window ).resize(function () {
+        setTimeout(function(){window.location.reload()}, 300);
+    });
 })
 
 // window.onresize = function () {

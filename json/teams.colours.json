@@ -75,8 +75,8 @@
         {
             "name":"Blue",
             "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
-            "img-clr":"blue",
-            "bg-clr":"blue",
+            "img-clr":"dodgerblue",
+            "bg-clr":"dodgerblue",
             "tx-clr":"white"
         },
     "black":

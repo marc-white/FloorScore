@@ -126,6 +126,7 @@ div.team-score {
     position: absolute;
     top: 55vh;
     height: 40vh !important;
+    box-sizing: content-box;
 }
 
 #team-img-home, #team-score-home, #team-name-home {

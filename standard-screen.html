@@ -43,23 +43,56 @@ $( document ).ready(function () {
     observer.observe(targetNode, observerConfig);
 
     function updateScores () {
+        var homeScore, awayScore, homeImg, awayImg;
+        homeScore = $('#team-score-home');
+        awayScore = $('#team-score-away');
+        homeImg = $('#team-img-home');
+        awayImg = $('#team-img-away');
+
         var currHomeName = window.opener.$('#team-home option:selected').text();
         $('#team-name-home td').text(currHomeName);
         var currHomeStyle = window.opener.$('#team-img-home').attr('style');
-        $('#team-img-home').attr('style', currHomeStyle);
+        homeImg.attr('style', currHomeStyle);
         var currHomeScoreStyle = window.opener.$('#team-score-home').attr('style');
-        $('#team-score-home').attr('style', currHomeScoreStyle);
+        homeScore.attr('style', currHomeScoreStyle);
         var currHomeScore = window.opener.$('#team-score-home').text();
-        $('#team-score-home').text( currHomeScore );
+        homeScore.text( currHomeScore );
+        homeImg.css('color', homeScore.css('color'));
 
         var currAwayName = window.opener.$('#team-away option:selected').text();
         $('#team-name-away td').text(currAwayName);
         var currAwayStyle = window.opener.$('#team-img-away').attr('style');
-        $('#team-img-away').attr('style', currAwayStyle);
+        awayImg.attr('style', currAwayStyle);
         var currAwayScoreStyle = window.opener.$('#team-score-away').attr('style');
-        $('#team-score-away').attr('style', currAwayScoreStyle);
+        awayScore.attr('style', currAwayScoreStyle);
         var currAwayScore = window.opener.$('#team-score-away').text();
-        $('#team-score-away').text( currAwayScore );
+        awayScore.text( currAwayScore );
+        awayImg.css('color', awayScore.css('color'));
+
+        // Add a grey border if the team colour matches the screen background
+        // Otherwise, make sure the border is 0
+
+        var bgcol = $( 'body' ).css('background-color');
+        [
+            '#team-score-home',
+            '#team-score-away',
+            '#team-img-away',
+            '#team-img-home'
+        ].forEach(function (e) {
+            var elem = $(e);
+            if (elem.css('background-color') == bgcol) {
+                elem.css('border', '2px solid gray');
+                elem.css('border-color', elem.css('color'));
+            } else {
+                elem.css('border', '0px solid none');
+            }
+            if (e.includes('img')) {
+                elem.css('border-bottom-width', '0');
+            } else {
+                elem.css('border-top-width', '0');
+            }
+        })
+
 
         formatScreen();
     }
@@ -72,6 +105,11 @@ $( document ).ready(function () {
     observerTeams.observe(targetNodeTeams, observerConfig);
 
     updateScores();
+
+    $( window ).resize(function () {
+        setTimeout(function(){window.location.reload()}, 300);
+    });
+
 })
 
 // window.onresize = function () {
