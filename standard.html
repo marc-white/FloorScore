@@ -21,8 +21,7 @@
     <form id="match-timer-form">
     <table>
     <tr><td colspan=3>
-        <p style="text-align:center;font-size:120%;background-color:yellow"><strong>NEW: Hit the space bar</strong> or click below to:</p>
-        <input type='button' value='Resume/Pause Time' onclick='startGame();toggleClock(MatchClockTock);' id='clock-toggle'/></td>
+        <button type='button' onclick='startGame();toggleClock(MatchClockTock);' id='clock-toggle'>Resume/Pause Time<br /><small style="background-color:yellow">(Spacebar)</small></button></td>
         <!-- <input type='button' value='Stop/Reset' onclick='MatchClock.resetCountdown();' /><br /> -->
         <!-- <input type='text' name='startTime' value='900' style='width:30px;' /><br /> -->
     <tr><td><input type='button' value='+1 min' onclick='MatchClockTock.alterTime(60.)' /></td>
@@ -37,10 +36,10 @@
         <td><input type='button' value='Prev per.' onclick='alterPeriod(-1)' /></td></tr>
     <tr><td colspan=3><input type='button' value='End game/reset system' onclick='resetGameManual(MatchClockTock)' /></td></tr>
     </table>
-        No periods: <select id='match-timer-no-periods'></select><br />
-        Len. period: <select id='match-timer-len-period'></select><br />
-        Len. break: <select id='match-timer-len-break'></select><br />
-        Rolling clock? <input type='checkbox' id='match-timer-rolling' checked /><br />
+        Number of periods in the game: <select id='match-timer-no-periods'></select><br />
+        Length of each period: <select id='match-timer-len-period'></select> minutes<br />
+        Length of each period break: <select id='match-timer-len-break'></select> minutes<br />
+        Auto-roll the clock between periods? <input type='checkbox' id='match-timer-rolling' style="transform: scale(2,2)" checked /><br />
     </form>
 </div>
 
@@ -74,8 +73,8 @@ Team: <select id='team-home'>
 <table><tr><td>
 <div class='team-img' id='team-img-home'></div>
 <div class='team-score' id='team-score-home'></div>
-<input type='button' value='+ goal' onclick='alterHomeScore(1)' /><br />
-<input type='button' value='- goal' onclick='alterHomeScore(-1)' />
+    <button type='button' onclick='alterHomeScore(1)' >+ goal <g style="background-color:yellow">(H)</g></button><br />
+    <button type='button' onclick='alterHomeScore(-1)' >- goal</button>
 </div></td></tr>
 <tr><td>
 <div class='away'>
@@ -85,8 +84,8 @@ Team: <select id='team-away'>
 </select><br />
 <div class='team-img' id='team-img-away'></div>
 <div class='team-score' id='team-score-away'></div>
-<input type='button' value='+ goal' onclick='alterAwayScore(1)' /><br />
-<input type='button' value='- goal' onclick='alterAwayScore(-1)' />
+    <button type='button' onclick='alterAwayScore(1)' >+ goal <g style="background-color:yellow">(A)</g></button><br />
+    <button type='button' onclick='alterAwayScore(-1)' >- goal</button>
 </div>
 </td></tr></table>
 </div>
@@ -101,9 +100,14 @@ Team: <select id='team-away'>
 <script>
     // Bind spacebar to start/stop clocks
     $(window).keypress(function(e) {
-        if (e.which == 32 ) {
+        console.log(e.which);
+        if (e.which == 32 ) { // Spacebar
             startGame();
             toggleClock(MatchClockTock);
+        } else if (e.which == 104) {  // h
+            alterHomeScore(1);
+        } else if (e.which == 97) {  // a
+            alterAwayScore(1);
         }
     });
 </script>

@@ -15,6 +15,15 @@ $( document ).ready(function () {
     // console.log(currTime)
     $('#match-period').html( currPer );
 
+    // Blink the active period box
+    function blinkActive (selector) {
+        let elem = $(selector);
+        elem.fadeOut(750, 'linear', function () {
+            elem.fadeIn(250, 'linear', function () { blinkActive(selector); })
+        })
+    }
+
+
     // Mutation observer approach
     // Team clock observer
     // console.log('Mutation observer!')
@@ -37,9 +46,9 @@ $( document ).ready(function () {
 
         // console.log('Updating current period...');
         let noPeriods = parseInt(window.opener.$("#match-timer-no-periods").val());
-        console.log('No. periods at reset: ' + noPeriods);
+        // console.log('No. periods at reset: ' + noPeriods);
         let currPer = window.opener.$('#match-period').html();
-        console.log('Current period at reset: ' + currPer);
+        // console.log('Current period at reset: ' + currPer);
         for (let i = 1; i <= noPeriods; i++) {
             let box = $('#period-' + i);
             box.removeClass().addClass('period-box');
@@ -52,6 +61,7 @@ $( document ).ready(function () {
                     // console.log('Looking for ' + '#period-arrow-' + (i-1) + '-' + i);
                     let perArrowNow = $('#period-arrow-' + (i-1) + '-' + i);
                     perArrowNow.addClass('period-arrow-visible');
+                    blinkActive('.period-arrow-visible');
                 } else {
                     box.addClass('period-box-active');
                     $('.period-arrow').removeClass('period-arrow-visible');
