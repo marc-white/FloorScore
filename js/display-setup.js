@@ -8,72 +8,83 @@ var advertImgList = [
 var advertShown = 0;
 
 function formatScreen () {
+    console.log('Running formatScreen()...');
     // Home team logo & score
     var tourneyLogoH = parseInt($('#tourney-logo').css('height'));
-    
-    $('#team-name-home').css('top', tourneyLogoH+'px');
-    var homeLogoW = parseInt($('#team-img-home').css('width'));
-    $('#team-name-home').css('height', 0.4*homeLogoW+'px');
-    var homeNameH = parseInt($('#team-name-home').css('height'));
+    var teamNameHome = $('#team-name-home');
+    var teamNameAway = $('#team-name-away');
+    var teamImgHome = $('#team-img-home');
+    var teamScoreHome = $('#team-score-home');
+    var teamImgAway = $('#team-img-away');
+    var teamScoreAway = $('#team-score-away');
+    var matchTimer = $('#match-timer');
+    var matchPeriod = $('#match-period');
+    var advertising = $('#advertising');
+    var scoreFontSizeFactor = 0.75;
+
+    teamNameHome.css('top', tourneyLogoH+'px');
+    var homeLogoW = parseInt(teamImgHome.css('width'));
+    teamNameHome.css('height', 0.4*homeLogoW+'px');
+    var homeNameH = parseInt(teamNameHome.css('height'));
 //    $('#team-name-home').css('font-size', 0.38*homeNameH+'px');
 //    $('#team-name-home').css('line-height', 0.40*homeNameH+'px');
-    $('#team-name-home').css('font-size', '38px');
-    $('#team-name-home').css('line-height', '40px');
-    $('#team-img-home').css('height', homeLogoW+'px');
-    $('#team-img-home').css('top', tourneyLogoH+homeNameH+homeLogoW+'px');
-    $('#team-score-home').css('height', homeLogoW+'px');
-    $('#team-score-home').css('line-height', homeLogoW+'px');
+    teamNameHome.css('font-size', '38px');
+    teamNameHome.css('line-height', '40px');
+    teamImgHome.css('height', homeLogoW+'px');
+    teamImgHome.css('top', tourneyLogoH+homeNameH+homeLogoW+'px');
+    teamScoreHome.css('height', homeLogoW+'px');
+    teamScoreHome.css('line-height', homeLogoW+'px');
     // console.log(tourneyLogoH);
     var homeScoreY = homeNameH + tourneyLogoH;
     // console.log(homeScoreY)
-    $('#team-score-home').css("top", homeScoreY+'px');
-    $('#team-score-home').css("font-size", 0.6*parseInt(homeLogoW)+'px');
+    teamScoreHome.css("top", homeScoreY+'px');
+    teamScoreHome.css("font-size", scoreFontSizeFactor*parseInt(homeLogoW)+'px');
 
-    $('#team-name-away').css('top', tourneyLogoH+'px');
-    var awayLogoW = parseInt($('#team-img-away').css('width'));
-    $('#team-name-away').css('height', 0.4*awayLogoW+'px');
-    var awayNameH = parseInt($('#team-name-away').css('height'));
+    teamNameAway.css('top', tourneyLogoH+'px');
+    var awayLogoW = parseInt(teamImgAway.css('width'));
+    teamNameAway.css('height', 0.4*awayLogoW+'px');
+    var awayNameH = parseInt(teamNameAway.css('height'));
 //    $('#team-name-away').css('font-size', 0.38*awayNameH+'px');
 //    $('#team-name-away').css('line-height', 0.40*awayNameH+'px');
-    $('#team-name-away').css('font-size', '38px');
-    $('#team-name-away').css('line-height', '40px');
-    $('#team-img-away').css('height', awayLogoW+'px');
-    $('#team-img-away').css('top', tourneyLogoH+awayNameH+awayLogoW+'px');
-    $('#team-score-away').css('height', awayLogoW+'px');
-    $('#team-score-away').css('line-height', awayLogoW+'px');
+    teamNameAway.css('font-size', '38px');
+    teamNameAway.css('line-height', '40px');
+    teamImgAway.css('height', awayLogoW+'px');
+    teamImgAway.css('top', tourneyLogoH+awayNameH+awayLogoW+'px');
+    teamScoreAway.css('height', awayLogoW+'px');
+    teamScoreAway.css('line-height', awayLogoW+'px');
     // console.log(tourneyLogoH);
     var awayScoreY = awayNameH + tourneyLogoH;
     // console.log(awayScoreY)
-    $('#team-score-away').css("top", awayScoreY+'px');
-    $('#team-score-away').css("font-size", 0.6*parseInt(awayLogoW)+'px');
+    teamScoreAway.css("top", awayScoreY+'px');
+    teamScoreAway.css("font-size", scoreFontSizeFactor*parseInt(awayLogoW)+'px');
 
     // $('.team-logo').css('font-size', 0.8*homeLogoW+"px");
 
     // Timer
-    timerW = parseInt($('#match-timer').css('width'));
+    timerW = parseInt(matchTimer.css('width'));
     // console.log(timerW);
-    $('#match-timer').css('height', 0.3*timerW+"px");
-    $('#match-timer').css('line-height', 0.3*timerW+"px");
-    timerH = parseInt($('#match-timer').css('height'));
-    $('#match-timer').css('font-size', 0.77*timerH+"px");
-    timerFS = parseInt($('#match-timer').css('font-size'));
-    $('#match-period').css('top', tourneyLogoH+timerH+'px');
-    $('#match-period').css('height', 0.65 * timerH + "px");
-    $('#match-period').css('line-height', 0.65 * timerH + "px");
-    $('#match-period').css('font-size', 0.45 * timerH + "px");
-    periodH = parseInt($('#match-period').css('height'));
+    matchTimer.css('height', 0.3*timerW+"px");
+    matchTimer.css('line-height', 0.32*timerW+"px");
+    timerH = parseInt(matchTimer.css('height'));
+    matchTimer.css('font-size', 0.84*timerH+"px");
+    timerFS = parseInt(matchTimer.css('font-size'));
+    matchPeriod.css('top', tourneyLogoH+timerH+'px');
+    matchPeriod.css('height', 0.65 * timerH + "px");
+    matchPeriod.css('line-height', 0.65 * timerH + "px");
+    matchPeriod.css('font-size', 0.45 * timerH + "px");
+    periodH = parseInt(matchPeriod.css('height'));
 
     // Advertising
-    advertW = parseInt($('#advertising').css('width'));
+    advertW = parseInt(advertising.css('width'));
     var advertY = tourneyLogoH+timerH+periodH;
     // console.log(tourneyLogoH);
     // console.log(timerH);
     // console.log(periodH);
     // console.log('makes');
     // console.log(advertY);
-    $('#advertising').css('top', advertY+'px');
-    $('#advertising').css('height', 0.4*advertW+'px');
-    var advertH = parseInt($('#advertising').css('height'));
+    advertising.css('top', advertY+'px');
+    advertising.css('height', 0.4*advertW+'px');
+    var advertH = parseInt(advertising.css('height'));
     console.log(0.18*advertH + 'px')
     $('#advertising td').css('font-size', 0.08*advertH + 'px');
 

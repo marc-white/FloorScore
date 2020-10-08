@@ -25,7 +25,7 @@ $( document ).ready(function () {
         subtree: true
     };
     targetNode = window.opener.document.querySelector('#timer-attributes');
-    observer = new MutationObserver(function (mutations) {
+    function updateTimer (mutations) {
         var t = window.opener.$('#match-timer');
         var currTime = t.html();
         var currBorder = t.css("borderLeftColor");
@@ -38,8 +38,10 @@ $( document ).ready(function () {
         var currPer = window.opener.$('#match-period').html();
         // console.log(currTime)
         $('#match-period').html( currPer );
-    });
-    // console.log(observer)
+    }
+    observer = new MutationObserver(updateTimer);
+    // Do an initial update on open
+    updateTimer();
     observer.observe(targetNode, observerConfig);
 
     function updateScores () {
@@ -57,6 +59,7 @@ $( document ).ready(function () {
         homeScore.attr('style', currHomeScoreStyle);
         var currHomeScore = window.opener.$('#team-score-home').text();
         homeScore.text( currHomeScore );
+        console.log(homeScore.attr('style'));
         homeImg.css('color', homeScore.css('color'));
 
         var currAwayName = window.opener.$('#team-away option:selected').text();

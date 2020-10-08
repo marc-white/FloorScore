@@ -225,7 +225,7 @@ function formatTime(time) {
     var min = parseInt(time / 60000),
         sec = parseInt(time / 1000) - (min * 60),
         mills = Math.floor((time - (sec * 1000) - (min * 60000)) / 100);
-    return (min > 0 ? pad(min, 2) + "<g id='timerColon'>:</g>" : "00<g id='timerColon'>:</g>") + pad(sec, 2) + (min < 1 ? "." + mills : "");
+    return (min > 0 ? pad(min, 2) + "<g id='timerColon'>:</g>" : "<g id='timerRedundant'>0:</g>") + pad(sec, 2) + (min < 1 ? "<g id='timerColon'>.</g>" + mills : "");
 }
 function startGame() {
     gameStarted = true;

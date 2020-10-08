@@ -48,6 +48,10 @@ html, body {
     border: 2px solid rgb(30,30,30);
 }
 
+#timerRedundant {
+    color: #808080;
+}
+
 #match-period {
     /*text-align: center;*/
     font-family: "Calibri", serif;
