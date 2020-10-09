@@ -2,9 +2,9 @@
     "pirates":
         {
             "name":"Pirates",
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
-            "img-clr":"teal",
-            "bg-clr":"teal",
+            "img":"./img/team-img/Pirates.png",
+            "img-clr":"#09717a",
+            "bg-clr":"#09717a",
             "tx-clr":"white"
         },
     "test-eagles":
