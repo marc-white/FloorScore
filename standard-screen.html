@@ -3,9 +3,10 @@
 <title>Rolling timer</title>
 <link rel='stylesheet' href='./css/display.css' />
 <script src='./js/jquery-3.1.0.min.js'></script>
+<script src="./js/jquery-ui.min.js"></script>
 <script src='./js/display-setup.js'></script>
 <script>
-var observer, targetNode, observerConfig;
+var observer, observerPeriod, targetNode, targetNodePeriod, observerConfig;
 $( document ).ready(function () {
     // Initialise manually
     var currTime = window.opener.$('#match-timer').html();
@@ -23,6 +24,15 @@ $( document ).ready(function () {
         })
     }
 
+    function blinkBackground (selector) {
+        let elem = $(selector);
+        let currBG = elem.css('background-color');
+        let newBG = 'rgb(100,100,100)';
+        elem.animate({backgroundColor: newBG}, 1000., 'linear', function () {
+            elem.animate({backgroundColor: currBG}, 1000., 'linear', function () { blinkBackground(selector); });
+        });
+    }
+
 
     // Mutation observer approach
     // Team clock observer
@@ -33,16 +43,33 @@ $( document ).ready(function () {
         characterData: true,
         subtree: true
     };
-    targetNode = window.opener.document.querySelector('#timer-attributes');
+    targetNode = window.opener.document.querySelector('#match-timer');
     function updateTimer (mutations) {
         var t = window.opener.$('#match-timer');
         var currTime = t.html();
         var currBorder = t.css("borderLeftColor");
         // console.log(currTime)
         var timerDisp = $('#match-timer');
-        timerDisp.html( currTime );
-        timerDisp.css('border', '2px solid ' + currBorder );
-        $('#match-timer #timerColon').css('color', currBorder) ;
+        timerDisp.html(currTime);
+        timerDisp.css('border', '2px solid ' + currBorder);
+        $('#match-timer #timerColon').css('color', currBorder);
+
+        formatScreen();
+    }
+    observer = new MutationObserver(updateTimer);
+    // Do an initial update on open
+    updateTimer();
+    observer.observe(targetNode, observerConfig);
+
+    targetNodePeriod = window.opener.document.querySelector('#match-period');
+    function updatePeriod (mutations) {
+
+        // End any and all period-related animations, and then remove any styles
+        // this might create
+        let periodRelated = $("[class^=period-]");
+        periodRelated.removeClass('period-box-active').removeClass('period-arrow-visible');
+        periodRelated.finish();
+        periodRelated.css('background-color', '').css('opacity', '');
 
         // console.log('Updating current period...');
         let noPeriods = parseInt(window.opener.$("#match-timer-no-periods").val());
@@ -54,34 +81,52 @@ $( document ).ready(function () {
             box.removeClass().addClass('period-box');
             let currPerInt = parseInt(currPer);
             if (i < currPerInt) {
+                // Stop any animation on this box, if it exists
+                // console.log('Making box ' + i + ' complete');
                 box.addClass('period-box-complete');
             } else if (currPerInt == i) {
                 if (currPer.includes('break')) {
+                    // Stop any current period box animations
+                    // console.log('Making box ' + i + ' next');
                     box.addClass('period-box-next');
                     // console.log('Looking for ' + '#period-arrow-' + (i-1) + '-' + i);
                     let perArrowNow = $('#period-arrow-' + (i-1) + '-' + i);
                     perArrowNow.addClass('period-arrow-visible');
                     blinkActive('.period-arrow-visible');
                 } else {
+                    // Stop any current period arrow animations
+                    // console.log('Making box ' + i + ' active');
                     box.addClass('period-box-active');
-                    $('.period-arrow').removeClass('period-arrow-visible');
+                    blinkBackground('.period-box-active');
                 }
+            } else {
+                // Remove any background-color change from the box
+                box.css('background-color', '');
+                box.removeClass('period-box-active').removeClass('period-box-complete');
+                box.finish();
             }
         }
 
         formatScreen();
     }
-    observer = new MutationObserver(updateTimer);
+    observerPeriod = new MutationObserver(updatePeriod);
     // Do an initial update on open
-    updateTimer();
-    observer.observe(targetNode, observerConfig);
+    updatePeriod();
+    observerPeriod.observe(targetNodePeriod, observerConfig);
 
     // Read and implement number of match periods
     // Only re-write period boxes on selector change
     function updateNoPeriods () {
+        // End any and all period-related animations, and then remove any styles
+        // this might create
+        let periodRelated = $("[class^=period-]");
+        periodRelated.removeClass('period-box-active').removeClass('period-arrow-visible');
+        periodRelated.finish();
+        periodRelated.css('background-color', '').css('opacity', '');
+
         matchPeriod = $('#match-period');
         matchPeriod.html('');
-        noPeriods = parseInt(window.opener.$("#match-timer-no-periods").val());
+        noPeriods = window.opener.$('#match-timer-no-periods').val();
         // console.log('noPeriods = ' + noPeriods);
         for (let i = 1; i <= noPeriods; i++) {
             matchPeriod.append("<div id='period-" + i + "' class='period-box'>" + i + "</div>");
@@ -96,10 +141,15 @@ $( document ).ready(function () {
             adverts.css('visibility', 'visible');
         }
         updateTimer();
+        updatePeriod();
         formatScreen();
     }
     updateNoPeriods();
-    window.opener.$('#match-timer-no-periods').change(updateNoPeriods);
+    window.opener.$('#match-timer-no-periods').change(function () {
+        // Something goes wrong with the animations that blows up the system - need to just do a reload
+        // This shouldn't in game anyway.... hopefully.
+        window.location.reload();
+    });
 
     function updateScores () {
         var homeScore, awayScore, homeImg, awayImg;
@@ -189,7 +239,7 @@ $( document ).ready(function () {
     <table>
     <tr><td><img src='./img/bm_afa_act_logo_white_transparent_rgb.png' /></td>
         <td rowspan=2 id='advertising-space' class='bgimage'></td></tr>
-    <tr><td>is proudly sponsored by:</td></tr>
+    <tr><td>is proudly supported by:</td></tr>
     </table>
 </div>
 

@@ -1,11 +1,13 @@
 // Formatting setup for screen
 
 var advertImgList = [
-'./img/sponsors/efloorball_logo_2000x1000-white.png',
-'./img/sponsors/PH-LOGO-edit-white-1200.png',
-'./img/sponsors/logo_florbee_final_1200.png'
+    './img/sponsors/EDS_33449_ACT_GOV_CBR_Reversed.png',
+    './img/sponsors/efloorball_logo_2000x1000-white.png',
+    './img/sponsors/PH-LOGO-edit-white-1200.png',
+    './img/sponsors/logo_florbee_final_1200.png'
 ];
 var advertShown = 0;
+var advertisingCadence = 45000.;
 
 function formatScreen () {
     // console.log('Running formatScreen()...');
@@ -111,7 +113,7 @@ $( document ).ready( function () {
     // Cycle advertising
     var advertCycle = setInterval(function () {
         (advertShown < (advertImgList.length-1)) ? advertShown += 1 : advertShown = 0;
-        console.log(advertShown);
+        // console.log(advertShown);
         updateAdvert(advertShown);
-    }, 90000);
+    }, advertisingCadence);
 });
