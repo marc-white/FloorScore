@@ -8,10 +8,10 @@
 var observer, targetNode, observerConfig;
 $( document ).ready(function () {
     // Initialise manually
-    var currTime = window.opener.$('#match-timer').html();
+    var currTime = $('#match-timer', opener.document) .html();
     // console.log(currTime)
     $('#match-timer').html( currTime );
-    var currPer = window.opener.$('#match-period').html();
+    var currPer = $('#match-period', opener.document) .html();
     // console.log(currTime)
     $('#match-period').html( currPer );
 
@@ -24,12 +24,12 @@ $( document ).ready(function () {
         characterData: true,
         subtree: true
     };
-    targetNode = window.opener.document.querySelector('#timer-attributes');
+    targetNode = parent.window.opener.document.querySelector('#timer-attributes');
     observer = new MutationObserver(function (mutations) {
-        var currTime = window.opener.$('#match-timer').html();
+        var currTime = $('#match-timer', opener.document) .html();
         // console.log(currTime)
         $('#match-timer').html( currTime );
-        var currPer = window.opener.$('#match-period').html();
+        var currPer = $('#match-period', opener.document) .html();
         // console.log(currTime)
         $('#match-period').html( currPer );
     });
@@ -37,29 +37,29 @@ $( document ).ready(function () {
     observer.observe(targetNode, observerConfig);
 
     function updateScores () {
-        var currHomeName = window.opener.$('#team-home option:selected').text();
+        var currHomeName = $('#team-home option:selected', opener.document) .text();
         $('#team-name-home td').text(currHomeName);
-        var currHomeStyle = window.opener.$('#team-img-home').attr('style');
+        var currHomeStyle = $('#team-img-home', opener.document) .attr('style');
         $('#team-img-home').attr('style', currHomeStyle);
-        var currHomeScoreStyle = window.opener.$('#team-score-home').attr('style');
+        var currHomeScoreStyle = $('#team-score-home', opener.document) .attr('style');
         $('#team-score-home').attr('style', currHomeScoreStyle);
-        var currHomeScore = window.opener.$('#team-score-home').text();
+        var currHomeScore = $('#team-score-home', opener.document) .text();
         $('#team-score-home').text( currHomeScore );
 
-        var currAwayName = window.opener.$('#team-away option:selected').text();
+        var currAwayName = $('#team-away option:selected', opener.document) .text();
         $('#team-name-away td').text(currAwayName);
-        var currAwayStyle = window.opener.$('#team-img-away').attr('style');
+        var currAwayStyle = $('#team-img-away', opener.document) .attr('style');
         $('#team-img-away').attr('style', currAwayStyle);
-        var currAwayScoreStyle = window.opener.$('#team-score-away').attr('style');
+        var currAwayScoreStyle = $('#team-score-away', opener.document) .attr('style');
         $('#team-score-away').attr('style', currAwayScoreStyle);
-        var currAwayScore = window.opener.$('#team-score-away').text();
+        var currAwayScore = $('#team-score-away', opener.document) .text();
         $('#team-score-away').text( currAwayScore );
 
         formatScreen();
     }
 
     // Team information observer
-    targetNodeTeams = window.opener.document.querySelector('#team-attributes');
+    targetNodeTeams = parent.window.opener.document.querySelector('#team-attributes');
     observerTeams = new MutationObserver(function (mutations) {
         updateScores();
     });

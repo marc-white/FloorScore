@@ -9,10 +9,10 @@
 var observer, observerPeriod, targetNode, targetNodePeriod, observerConfig;
 $( document ).ready(function () {
     // Initialise manually
-    var currTime = window.opener.$('#match-timer').html();
+    var currTime = $('#match-timer', opener.document) .html();
     // console.log(currTime)
     $('#match-timer').html( currTime );
-    var currPer = window.opener.$('#match-period').html();
+    var currPer = $('#match-period', opener.document) .html();
     // console.log(currTime)
     $('#match-period').html( currPer );
 
@@ -43,9 +43,9 @@ $( document ).ready(function () {
         characterData: true,
         subtree: true
     };
-    targetNode = window.opener.document.querySelector('#match-timer');
+    targetNode = $('#match-timer', opener.document)[0];
     function updateTimer (mutations) {
-        var t = window.opener.$('#match-timer');
+        var t = $('#match-timer', opener.document) ;
         var currTime = t.html();
         var currBorder = t.css("borderLeftColor");
         // console.log(currTime)
@@ -61,7 +61,9 @@ $( document ).ready(function () {
     updateTimer();
     observer.observe(targetNode, observerConfig);
 
-    targetNodePeriod = window.opener.document.querySelector('#match-period');
+    targetNodePeriod = $('#match-period', opener.document)[0];
+    console.log('targetNodePeriod');
+    console.log(targetNodePeriod)
     function updatePeriod (mutations) {
 
         // End any and all period-related animations, and then remove any styles
@@ -72,9 +74,9 @@ $( document ).ready(function () {
         periodRelated.css('background-color', '').css('opacity', '');
 
         // console.log('Updating current period...');
-        let noPeriods = parseInt(window.opener.$("#match-timer-no-periods").val());
+        let noPeriods = parseInt($("#match-timer-no-periods", opener.document).val());
         // console.log('No. periods at reset: ' + noPeriods);
-        let currPer = window.opener.$('#match-period').html();
+        let currPer = $('#match-period', opener.document) .html();
         // console.log('Current period at reset: ' + currPer);
         for (let i = 1; i <= noPeriods; i++) {
             let box = $('#period-' + i);
@@ -126,7 +128,7 @@ $( document ).ready(function () {
 
         matchPeriod = $('#match-period');
         matchPeriod.html('');
-        noPeriods = window.opener.$('#match-timer-no-periods').val();
+        noPeriods = $('#match-timer-no-periods', opener.document) .val();
         // console.log('noPeriods = ' + noPeriods);
         for (let i = 1; i <= noPeriods; i++) {
             matchPeriod.append("<div id='period-" + i + "' class='period-box'>" + i + "</div>");
@@ -145,7 +147,7 @@ $( document ).ready(function () {
         formatScreen();
     }
     updateNoPeriods();
-    window.opener.$('#match-timer-no-periods').change(function () {
+    $('#match-timer-no-periods', opener.document).change(function () {
         // Something goes wrong with the animations that blows up the system - need to just do a reload
         // This shouldn't in game anyway.... hopefully.
         window.location.reload();
@@ -158,24 +160,24 @@ $( document ).ready(function () {
         homeImg = $('#team-img-home');
         awayImg = $('#team-img-away');
 
-        var currHomeName = window.opener.$('#team-home option:selected').text();
+        var currHomeName = $('#team-home option:selected', opener.document) .text();
         $('#team-name-home td').text(currHomeName);
-        var currHomeStyle = window.opener.$('#team-img-home').attr('style');
+        var currHomeStyle = $('#team-img-home', opener.document) .attr('style');
         homeImg.attr('style', currHomeStyle);
-        var currHomeScoreStyle = window.opener.$('#team-score-home').attr('style');
+        var currHomeScoreStyle = $('#team-score-home', opener.document) .attr('style');
         homeScore.attr('style', currHomeScoreStyle);
-        var currHomeScore = window.opener.$('#team-score-home').text();
+        var currHomeScore = $('#team-score-home', opener.document) .text();
         homeScore.text( currHomeScore );
         // console.log(homeScore.attr('style'));
         homeImg.css('color', homeScore.css('color'));
 
-        var currAwayName = window.opener.$('#team-away option:selected').text();
+        var currAwayName = $('#team-away option:selected', opener.document) .text();
         $('#team-name-away td').text(currAwayName);
-        var currAwayStyle = window.opener.$('#team-img-away').attr('style');
+        var currAwayStyle = $('#team-img-away', opener.document) .attr('style');
         awayImg.attr('style', currAwayStyle);
-        var currAwayScoreStyle = window.opener.$('#team-score-away').attr('style');
+        var currAwayScoreStyle = $('#team-score-away', opener.document) .attr('style');
         awayScore.attr('style', currAwayScoreStyle);
-        var currAwayScore = window.opener.$('#team-score-away').text();
+        var currAwayScore = $('#team-score-away', opener.document) .text();
         awayScore.text( currAwayScore );
         awayImg.css('color', awayScore.css('color'));
 
@@ -208,7 +210,9 @@ $( document ).ready(function () {
     }
 
     // Team information observer
-    targetNodeTeams = window.opener.document.querySelector('#team-attributes');
+    targetNodeTeams = $('#team-attributes', opener.document)[0];
+    console.log('targetNodeTeams');
+    console.log(targetNodeTeams);
     observerTeams = new MutationObserver(function (mutations) {
         updateScores();
     });
