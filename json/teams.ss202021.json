@@ -38,5 +38,13 @@
         "img-clr":"black",
         "bg-clr":"black",
         "tx-clr":"white"
+    },
+    "huckey":
+    {
+        "name":"Huckey",
+        "img":"./img/team-img/huckey-logo.png",
+        "img-clr":"white",
+        "bg-clr":"white",
+        "tx-clr":"black"
     }
 }
