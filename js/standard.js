@@ -374,13 +374,19 @@ $( document ).ready(function () {
     });
 
     teamdata = {};
-    [
-    "./json/teams.colours.json"
-    ].forEach(function (i) {
-        ($.getJSON(i, function (json) { 
+    var teamjson = [
+        "./json/teams.colours.json"
+    ]
+    teamjson.forEach(function (i, index) {
+        ($.getJSON(i, function (json) {
+            console.log('JSON populate index = ' + index);
             // // console.log('Have team JSON!');
             $.extend(teamdata, json);
-            populateTeamSelects(json);
+            // populateTeamSelects(teamdata);
+            if (index == teamjson.length - 1) {
+                console.log('Pop team selects');
+                populateTeamSelects(teamdata);
+            }
         }));
     });
     // Initialize system
