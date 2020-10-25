@@ -358,8 +358,8 @@ $( document ).ready(function () {
     if ( $( 'div#lowLag ').length == 0 ) {
         console.log('Initializing lowLag...');
         lowLag.init({sm2url: './js/sm2/swf/', urlPrefix: './mp3/'});
-        lowLag.load('47434BUZZER.mp3', 'buzzer');
-        lowLag.load('thirty.mp3', 'warningThirty');
+        lowLag.load(['47434BUZZER.mp3', '47434BUZZER.ogg', '47434BUZZER.wav'], 'buzzer');
+        lowLag.load(['thirty.mp3', 'thirty.ogg', 'thirty.wav'], 'warningThirty');
     }
 
     clockToggleH = parseInt($('#clock-toggle').css('height'));
@@ -442,6 +442,26 @@ $( document ).ready(function () {
         alterBGTeamScore('#team-score-away', $( this ).val(), scoreAway);
     })
 
+    // Set up the manual buzzer system
+    $('#arm-manual-buzzer').change(function () {
+        console.log('Clicked arm-manual-buzzer');
+        if ($(this).is(":checked")) {
+            // Enable buzzer button
+            $("#manual-buzzer").prop("disabled", false);
+        } else {
+            // Disable buzzer button
+            $("#manual-buzzer").prop("disabled", true);
+        }
+    });
+    $('#arm-manual-buzzer').prop("checked", false).change();
+
+    $('#manual-buzzer').click(function () {
+        lowLag.play('buzzer');
+        $('#arm-manual-buzzer').prop("checked", false).change();
+    });
+
+
     // Should now be ready - reset game to start!
     resetGame();
+
 });
