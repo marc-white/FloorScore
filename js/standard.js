@@ -10,6 +10,7 @@ var MatchClockTock;
 //var warningThiry = new Audio('./mp3/thirty.mp3');
 var warningGiven;
 var teamdata;
+var teamdata_ordered;
 
 function sleep(milliseconds) {
   var start = new Date().getTime();
@@ -238,7 +239,8 @@ function populateSelect (id, start_no, end_no) {
     }
 }
 function populateSelectTeamArray (id, arr) {
-    // console.log('Running populateSelectTeamArray')
+    console.log('Running populateSelectTeamArray with these data:')
+    console.log(arr);
     var $select = $(id)
     // // console.log($select)
     // jQuery.each(arr, function () {
@@ -267,7 +269,8 @@ function populateSelects () {
 }
 
 function populateTeamSelects (data) {
-    // console.log('Doing populateTeamSelects');
+    console.log('Doing populateTeamSelects with these data:');
+    console.log(data);
     populateSelectTeamArray('#team-home', data);
     populateSelectTeamArray('#team-away', data);
 }
@@ -384,13 +387,17 @@ $( document ).ready(function () {
             $.extend(teamdata, json);
             // populateTeamSelects(teamdata);
             if (index == teamjson.length - 1) {
-                console.log('Pop team selects');
-                populateTeamSelects(teamdata);
+                // console.log('Pop team selects');
+
+                // populateTeamSelects(teamdata);
             }
         }));
     });
     // Initialize system
+    // teamdata.sort();
     populateSelects();
+    console.log(teamdata);
+    populateTeamSelects(teamdata);
 
     // Set game-alteration selects to system hard-coded defaults
     $('#match-timer-no-periods').val(noPeriods)
