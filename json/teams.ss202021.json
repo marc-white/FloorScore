@@ -1,12 +1,4 @@
 {
-    "pirates":
-        {
-            "name":"Pirates",
-            "img":"./img/team-img/Pirates.png",
-            "img-clr":"#09717a",
-            "bg-clr":"#09717a",
-            "tx-clr":"white"
-        },
     "test-eagles":
         {
             "name":"Test Eagles",
@@ -15,14 +7,54 @@
             "bg-clr":"black",
             "tx-clr":"#c1a675"
         },
+    "huckey":
+    {
+        "name":"Huckey",
+        "img":"./img/team-img/huckey-logo.png",
+        "img-clr":"white",
+        "bg-clr":"white",
+        "tx-clr":"black"
+    },
+    "d1-team-c":
+    {
+        "name":"D1 Team C",
+        "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+        "img-clr":"limegreen",
+        "bg-clr":"limegreen",
+        "tx-clr":"white"
+    },
+    "d1-team-d":
+    {
+        "name":"D1 Team D",
+        "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
+        "img-clr":"yellow",
+        "bg-clr":"yellow",
+        "tx-clr":"black"
+    },
+    "d1-team-e":
+    {
+        "name":"D1 Team C",
+        "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+        "img-clr":"red",
+        "bg-clr":"red",
+        "tx-clr":"white"
+    },
+    "d1-team-f":
+    {
+        "name":"D1 Team F",
+        "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+        "img-clr":"navy",
+        "bg-clr":"navy",
+        "tx-clr":"white"
+    },
     "schooney-tunes":
-        {
-            "name":"Schooney Tunes",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
-            "img-clr":"white",
-            "bg-clr":"white",
-            "tx-clr":"black"
-        },
+    {
+        "name":"Schooney Tunes",
+        "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+        "img-clr":"black",
+        "bg-clr":"black",
+        "tx-clr":"firebrick"
+    },
     "running-with-intent":
     {
         "name":"Running With Intent",
@@ -39,12 +71,28 @@
         "bg-clr":"black",
         "tx-clr":"white"
     },
-    "huckey":
+    "pirates":
     {
-        "name":"Huckey",
-        "img":"./img/team-img/huckey-logo.png",
-        "img-clr":"white",
-        "bg-clr":"white",
-        "tx-clr":"black"
+        "name":"Pirates",
+        "img":"./img/team-img/Pirates.png",
+        "img-clr":"#09717a",
+        "bg-clr":"#09717a",
+        "tx-clr":"white"
+    },
+    "d2-team-e":
+    {
+        "name":"D2 Team E",
+        "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+        "img-clr":"purple",
+        "bg-clr":"purple",
+        "tx-clr":"white"
+    },
+    "d2-team-f":
+    {
+        "name":"D2 Team F",
+        "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+        "img-clr":"dodgerblue",
+        "bg-clr":"dodgerblue",
+        "tx-clr":"white"
     }
 }
