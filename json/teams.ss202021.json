@@ -15,10 +15,10 @@
         "bg-clr":"white",
         "tx-clr":"black"
     },
-    "d1-team-c":
+    "sofas":
     {
-        "name":"D1 Team C",
-        "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+        "name":"SOFAS",
+        "img":"./img/team-img/sofa_green_trans.png",
         "img-clr":"limegreen",
         "bg-clr":"limegreen",
         "tx-clr":"white"
@@ -33,7 +33,7 @@
     },
     "d1-team-e":
     {
-        "name":"D1 Team C",
+        "name":"D1 Team E",
         "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
         "img-clr":"red",
         "bg-clr":"red",
