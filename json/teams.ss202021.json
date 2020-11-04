@@ -50,10 +50,10 @@
     "schooney-tunes":
     {
         "name":"Schooney Tunes",
-        "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+        "img":"./img/team-img/SchooneyTunesFinal.png",
         "img-clr":"black",
         "bg-clr":"black",
-        "tx-clr":"firebrick"
+        "tx-clr":"#e23940"
     },
     "running-with-intent":
     {
