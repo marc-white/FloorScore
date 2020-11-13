@@ -21,7 +21,7 @@
         "img":"./img/team-img/sofa_green_trans.png",
         "img-clr":"limegreen",
         "bg-clr":"limegreen",
-        "tx-clr":"white"
+        "tx-clr":"black"
     },
     "d1-team-d":
     {
@@ -31,10 +31,10 @@
         "bg-clr":"yellow",
         "tx-clr":"black"
     },
-    "d1-team-e":
+    "leonballers":
     {
-        "name":"D1 Team E",
-        "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+        "name":"Leonballers",
+        "img":"./img/team-img/HelgaBear.png",
         "img-clr":"red",
         "bg-clr":"red",
         "tx-clr":"white"
@@ -79,7 +79,7 @@
         "bg-clr":"#09717a",
         "tx-clr":"white"
     },
-    "Loganberries":
+    "loganberries":
     {
         "name":"Loganberries",
         "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
@@ -87,12 +87,12 @@
         "bg-clr":"purple",
         "tx-clr":"white"
     },
-    "d2-team-f":
+    "saturday-blues":
     {
-        "name":"D2 Team F",
-        "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+        "name":"Saturday Blues",
+        "img":"./img/team-img/1280px-St._Louis_Blues_logo.svg.png",
         "img-clr":"dodgerblue",
         "bg-clr":"dodgerblue",
-        "tx-clr":"white"
+        "tx-clr":"black"
     }
 }
