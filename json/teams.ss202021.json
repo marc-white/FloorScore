@@ -39,12 +39,12 @@
         "bg-clr":"red",
         "tx-clr":"white"
     },
-    "d1-team-f":
+    "blue-steel":
     {
-        "name":"D1 Team F",
-        "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
-        "img-clr":"navy",
-        "bg-clr":"navy",
+        "name":"Blue Steel",
+        "img":"./img/team-img/BlueSteelCropPause.gif",
+        "img-clr":"mediumblue",
+        "bg-clr":"mediumblue",
         "tx-clr":"white"
     },
     "schooney-tunes":
