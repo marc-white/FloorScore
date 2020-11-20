@@ -51,8 +51,8 @@
     {
         "name":"Schooney Tunes",
         "img":"./img/team-img/SchooneyTunesFinal.png",
-        "img-clr":"black",
-        "bg-clr":"black",
+        "img-clr":"white",
+        "bg-clr":"white",
         "tx-clr":"#e23940"
     },
     "running-with-intent":
