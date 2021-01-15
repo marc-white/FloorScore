@@ -15,10 +15,10 @@
         "bg-clr":"white",
         "tx-clr":"black"
     },
-    "sofas":
+    "green-with-envy":
     {
-        "name":"SOFAS",
-        "img":"./img/team-img/sofa_green_trans.png",
+        "name":"Green With Envy",
+        "img":"./img/team-img/GreenApple.png",
         "img-clr":"limegreen",
         "bg-clr":"limegreen",
         "tx-clr":"black"
