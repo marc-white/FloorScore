@@ -211,8 +211,8 @@ div.team-score {
 }
 
 .period-box-complete {
-    background: rgb(75,75,75);
-    border-color: rgb(75,75,75);
+    background: rgb(45,45,45);
+    border-color: rgb(45,45,45);
     color: black;
 }
 
@@ -222,8 +222,8 @@ div.team-score {
     color: black;
     background: black;
     font-weight: lighter;
-    font-size: 37%;
-    /*font-stretch: condensed;*/
+    font-size: 67%;
+    font-stretch: condensed;
     margin: 0;
     padding: 0;
 }
