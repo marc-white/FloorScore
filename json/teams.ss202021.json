@@ -43,9 +43,9 @@
     {
         "name":"Blue Steel",
         "img":"./img/team-img/BlueSteelCropPause.gif",
-        "img-clr":"mediumblue",
-        "bg-clr":"mediumblue",
-        "tx-clr":"white"
+        "img-clr":"deeppink",
+        "bg-clr":"deeppink",
+        "tx-clr":"black"
     },
     "schooney-tunes":
     {
