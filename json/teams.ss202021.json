@@ -15,38 +15,6 @@
         "bg-clr":"white",
         "tx-clr":"black"
     },
-    "green-with-envy":
-    {
-        "name":"Green With Envy",
-        "img":"./img/team-img/GreenApple.png",
-        "img-clr":"limegreen",
-        "bg-clr":"limegreen",
-        "tx-clr":"black"
-    },
-    "lemons":
-    {
-        "name":"Lemons",
-        "img":"./img/team-img/kisspng-holden.png",
-        "img-clr":"yellow",
-        "bg-clr":"yellow",
-        "tx-clr":"black"
-    },
-    "leonballers":
-    {
-        "name":"Leonballers",
-        "img":"./img/team-img/HelgaBear.png",
-        "img-clr":"red",
-        "bg-clr":"red",
-        "tx-clr":"white"
-    },
-    "blue-steel":
-    {
-        "name":"Blue Steel",
-        "img":"./img/team-img/BlueSteelCropPause.gif",
-        "img-clr":"deeppink",
-        "bg-clr":"deeppink",
-        "tx-clr":"black"
-    },
     "schooney-tunes":
     {
         "name":"Schooney Tunes",
@@ -63,36 +31,20 @@
         "bg-clr":"orange",
         "tx-clr":"black"
     },
-    "dry-reachers":
+    "3rd-6th":
     {
-        "name":"Dry Reachers",
+        "name":"3rd &amp; 6th",
+        "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
+        "img-clr":"white",
+        "bg-clr":"white",
+        "tx-clr":"black"
+    },
+    "4th-5th":
+    {
+        "name":"4th &amp; 5th",
         "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
         "img-clr":"black",
         "bg-clr":"black",
         "tx-clr":"white"
-    },
-    "pirates":
-    {
-        "name":"Pirates",
-        "img":"./img/team-img/Pirates.png",
-        "img-clr":"#09717a",
-        "bg-clr":"#09717a",
-        "tx-clr":"white"
-    },
-    "loganberries":
-    {
-        "name":"Loganberries",
-        "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
-        "img-clr":"purple",
-        "bg-clr":"purple",
-        "tx-clr":"white"
-    },
-    "saturday-blues":
-    {
-        "name":"Saturday Blues",
-        "img":"./img/team-img/1280px-St._Louis_Blues_logo.svg.png",
-        "img-clr":"dodgerblue",
-        "bg-clr":"dodgerblue",
-        "tx-clr":"black"
     }
 }
