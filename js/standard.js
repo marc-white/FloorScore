@@ -24,8 +24,8 @@ var scoreHome, scoreAway;
 
 // Set global default values
 noPeriods = 3;
-lenPeriod = 14;
-lenBreak = 2;
+lenPeriod = 16;
+lenBreak = 3;
 rollingClock = true;
 
 function resetGame() {
