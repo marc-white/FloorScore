@@ -6,8 +6,8 @@ var MatchClockTock;
 //$( document ).ready(function () {
 //
 //})
-//var buzzer = new Audio('./mp3/47434BUZZER.mp3');
-//var warningThiry = new Audio('./mp3/thirty.mp3');
+var buzzer ;
+var warningThirty ;
 var warningGiven;
 var teamdata;
 
@@ -64,7 +64,7 @@ function resetGame() {
             // }
             $('#match-timer').html(formatTime(this.lap()));
             if ((!isPlay) && (this.lap() < 30*1000) && (this.lap() > 29*1000) && (!warningGiven)) {
-                lowLag.play('warningThirty');
+                warningThirty.play();
                 warningGiven = true;
             }
             if (this.go) {
@@ -81,7 +81,7 @@ function resetGame() {
 //        },
         complete: function (playSound = true) {
             // console.log('Inside onComplete');
-            if (playSound) { lowLag.play('buzzer'); }
+            if (playSound) { buzzer.play(); }
 //            setTimeout(function () {console.log('Game done'); }, 1000);
             if (period >= noPeriods && isPlay) {
                 this.stop();
@@ -355,12 +355,22 @@ function alterPeriod(inc) {
 // On-page-load events
 $( document ).ready(function () {
 
-    if ( $( 'div#lowLag ').length == 0 ) {
-        console.log('Initializing lowLag...');
-        lowLag.init({sm2url: './js/sm2/swf/', urlPrefix: './mp3/'});
-        lowLag.load(['47434BUZZER.mp3', '47434BUZZER.ogg', '47434BUZZER.wav'], 'buzzer');
-        lowLag.load(['thirty.mp3', 'thirty.ogg', 'thirty.wav'], 'warningThirty');
-    }
+    console.log('Initializing howler...');
+    buzzer = new Howl({
+        src: ['47434BUZZER.mp3', '47434BUZZER.ogg', '47434BUZZER.wav'],
+        preload: true,
+        autoplay: false,
+    })
+    warningThirty = new Howl({
+        src: ['thirty.mp3', 'thirty.ogg', 'thirty.wav'],
+        preload: true,
+        autoplay: false,
+    })
+
+    // console.log('Initializing lowLag...');
+    // lowLag.init({sm2url: './js/sm2/swf/', urlPrefix: './mp3/'});
+    // lowLag.load(['47434BUZZER.mp3', '47434BUZZER.ogg', '47434BUZZER.wav'], 'buzzer');
+    // lowLag.load(['thirty.mp3', 'thirty.ogg', 'thirty.wav'], 'warningThirty');
 
     clockToggleH = parseInt($('#clock-toggle').css('height'));
     $('#clock-toggle').css('height', 2*clockToggleH + 'px');
@@ -456,7 +466,7 @@ $( document ).ready(function () {
     $('#arm-manual-buzzer').prop("checked", false).change();
 
     $('#manual-buzzer').click(function () {
-        lowLag.play('buzzer');
+        buzzer.play();
         $('#arm-manual-buzzer').prop("checked", false).change();
     });
 
