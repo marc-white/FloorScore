@@ -356,8 +356,15 @@ function alterPeriod(inc) {
 $( document ).ready(function () {
 
     console.log('Initializing howler...');
+    Howler.html5PoolSize = 1000 ;
     buzzer = new Howl({
         src: ['47434BUZZER.mp3', '47434BUZZER.ogg', '47434BUZZER.wav'],
+        xhr: {
+            method: 'GET',
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+            },
+        },
         preload: true,
         autoplay: false,
     })
@@ -387,11 +394,24 @@ $( document ).ready(function () {
     [
     "./json/teams.colours.json"
     ].forEach(function (i) {
-        ($.getJSON(i, function (json) { 
+        ($.getJSON(i+"?callback=?", function (json) {
             // // console.log('Have team JSON!');
             $.extend(teamdata, json);
             populateTeamSelects(json);
         }));
+        // $.ajax({
+        //     crossDomain: true,
+        //     dataType: "jsonp",
+        //     jsonp: false,
+        //     jsonpCallback: "callback",
+        //     url: i,
+        //     success: function (json) {
+        //         // // console.log('Have team JSON!');
+        //         // $.extend(teamdata, json);
+        //         // populateTeamSelects(json);
+        //         console.log(json);
+        //     },
+        // })
     });
     // Initialize system
     populateSelects();
