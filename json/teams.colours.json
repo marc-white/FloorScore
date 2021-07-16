@@ -7,9 +7,9 @@
             "bg-clr":"red",
             "tx-clr":"black"
         },
-    "green":
+    "quaranteam":
         {
-            "name":"Green", 
+            "name":"Quaranteam",
             "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
             "img-clr":"lawngreen",
             "bg-clr":"lawngreen",
@@ -31,9 +31,9 @@
             "bg-clr":"cyan",
             "tx-clr":"black"
         },
-    "purple":
+    "purple-people-eaters":
         {
-            "name":"Purple",
+            "name":"Purple People Eaters",
             "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
             "img-clr":"purple",
             "bg-clr":"purple",
@@ -87,12 +87,20 @@
             "bg-clr":"Black",
             "tx-clr":"white"
         },
-    "brown":
+    "majestic-wombats":
     {
-        "name":"Brown",
+        "name":"Majestic Wombats",
         "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
         "img-clr":"saddlebrown",
         "bg-clr":"saddlebrown",
         "tx-clr":"white"
+    },
+    "test-eagles":
+    {
+        "name":"Test Eagles",
+        "img":"./img/team-img/TestEagles.png",
+        "img-clr":"black",
+        "bg-clr":"black",
+        "tx-clr":"#c1a675"
     }
 }
