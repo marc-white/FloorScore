@@ -71,17 +71,17 @@
             "bg-clr":"navy",
             "tx-clr":"white"
         },
-    "blue":
+    "ws2021-1b":
         {
-            "name":"Blue",
+            "name":"WS2021 1B",
             "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
             "img-clr":"dodgerblue",
             "bg-clr":"dodgerblue",
             "tx-clr":"white"
         },
-    "black":
+    "last-minute":
         {
-            "name":"Black",
+            "name":"Last Minute",
             "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
             "img-clr":"Black",
             "bg-clr":"Black",
