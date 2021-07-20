@@ -15,22 +15,6 @@
             "bg-clr":"lawngreen",
             "tx-clr":"black"
         },
-    "pink":
-        {
-            "name":"Pink",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
-            "img-clr":"hotpink",
-            "bg-clr":"hotpink",
-            "tx-clr":"black"
-        },
-    "cyan":
-        {
-            "name":"Cyan",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
-            "img-clr":"cyan",
-            "bg-clr":"cyan",
-            "tx-clr":"black"
-        },
     "purple-people-eaters":
         {
             "name":"Purple People Eaters",
@@ -46,30 +30,6 @@
             "img-clr":"white",
             "bg-clr":"white",
             "tx-clr":"black"
-        },
-    "yellow":
-        {
-            "name":"Yellow",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
-            "img-clr":"yellow",
-            "bg-clr":"yellow",
-            "tx-clr":"black"
-        },
-    "orange":
-        {
-            "name":"Orange",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
-            "img-clr":"orange",
-            "bg-clr":"orange",
-            "tx-clr":"black"
-        },
-    "navy":
-        {
-            "name":"Navy",
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
-            "img-clr":"navy",
-            "bg-clr":"navy",
-            "tx-clr":"white"
         },
     "ws2021-1b":
         {
