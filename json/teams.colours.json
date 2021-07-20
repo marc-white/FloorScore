@@ -1,11 +1,11 @@
 {
-    "red":
+    "ws2021-2c":
         {
-            "name":"Red", 
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
+            "name":"WS2021 2C",
+            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
             "img-clr":"red",
             "bg-clr":"red",
-            "tx-clr":"black"
+            "tx-clr":"white"
         },
     "quaranteam":
         {
@@ -23,21 +23,21 @@
             "bg-clr":"purple",
             "tx-clr":"white"
         },
-    "white":
-        {
-            "name":"White",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
-            "img-clr":"white",
-            "bg-clr":"white",
-            "tx-clr":"black"
-        },
+    "schooney-tunes":
+    {
+        "name":"Schooney Tunes",
+        "img":"./img/team-img/SchooneyTunesFinal.png",
+        "img-clr":"white",
+        "bg-clr":"white",
+        "tx-clr":"#e23940"
+    },
     "ws2021-1b":
         {
             "name":"WS2021 1B",
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
             "img-clr":"dodgerblue",
             "bg-clr":"dodgerblue",
-            "tx-clr":"white"
+            "tx-clr":"black"
         },
     "last-minute":
         {
