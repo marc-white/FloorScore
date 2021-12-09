@@ -7,9 +7,9 @@
         "bg-clr":"red",
         "tx-clr":"black"
     },
-    "green":
+    "team1c":
     {
-        "name":"Green",
+        "name":"Team 1C",
         "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
         "img-clr":"lawngreen",
         "bg-clr":"lawngreen",
@@ -23,17 +23,9 @@
         "bg-clr":"hotpink",
         "tx-clr":"black"
     },
-    "cyan":
+    "team1e":
     {
-        "name":"Cyan",
-        "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
-        "img-clr":"cyan",
-        "bg-clr":"cyan",
-        "tx-clr":"black"
-    },
-    "purple":
-    {
-        "name":"Purple",
+        "name":"Team 1E",
         "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
         "img-clr":"purple",
         "bg-clr":"purple",
@@ -55,9 +47,9 @@
         "bg-clr":"yellow",
         "tx-clr":"black"
     },
-    "orange":
+    "team1d":
     {
-        "name":"Orange",
+        "name":"Team 1D",
         "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
         "img-clr":"orange",
         "bg-clr":"orange",
