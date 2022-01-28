@@ -1,15 +1,15 @@
 {
-    "red":
+    "red-pandas":
     {
-        "name":"Red",
+        "name":"Red Pandas",
         "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
         "img-clr":"red",
         "bg-clr":"red",
         "tx-clr":"black"
     },
-    "team1c":
+    "green-gang":
     {
-        "name":"Team 1C",
+        "name":"Green Gang",
         "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
         "img-clr":"lawngreen",
         "bg-clr":"lawngreen",
@@ -23,25 +23,25 @@
         "bg-clr":"hotpink",
         "tx-clr":"black"
     },
-    "team1e":
+    "barneys":
     {
-        "name":"Team 1E",
+        "name":"Barneys",
         "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
         "img-clr":"purple",
         "bg-clr":"purple",
         "tx-clr":"white"
     },
-    "white":
+    "team2c":
     {
-        "name":"White",
+        "name":"Team 2C",
         "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
         "img-clr":"white",
         "bg-clr":"white",
         "tx-clr":"black"
     },
-    "yellow":
+    "yellow-smurfs":
     {
-        "name":"Yellow",
+        "name":"Yellow Smurfs",
         "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
         "img-clr":"yellow",
         "bg-clr":"yellow",
@@ -63,9 +63,9 @@
         "bg-clr":"navy",
         "tx-clr":"white"
     },
-    "blue":
+    "team2c":
     {
-        "name":"Blue",
+        "name":"Team 2C",
         "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
         "img-clr":"dodgerblue",
         "bg-clr":"dodgerblue",
