@@ -63,9 +63,9 @@
         "bg-clr":"navy",
         "tx-clr":"white"
     },
-    "team2c":
+    "team2b":
     {
-        "name":"Team 2C",
+        "name":"Team 2B",
         "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
         "img-clr":"dodgerblue",
         "bg-clr":"dodgerblue",
