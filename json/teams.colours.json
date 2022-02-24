@@ -31,9 +31,9 @@
         "bg-clr":"purple",
         "tx-clr":"white"
     },
-    "team2c":
+    "penguins":
     {
-        "name":"Team 2C",
+        "name":"Penguins",
         "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
         "img-clr":"white",
         "bg-clr":"white",
@@ -47,9 +47,9 @@
         "bg-clr":"yellow",
         "tx-clr":"black"
     },
-    "team1d":
+    "orange-not-yellow":
     {
-        "name":"Team 1D",
+        "name":"Orange, not Yellow",
         "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
         "img-clr":"orange",
         "bg-clr":"orange",
@@ -63,9 +63,9 @@
         "bg-clr":"navy",
         "tx-clr":"white"
     },
-    "team2b":
+    "blue-steel":
     {
-        "name":"Team 2B",
+        "name":"Blue Steel",
         "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
         "img-clr":"dodgerblue",
         "bg-clr":"dodgerblue",
