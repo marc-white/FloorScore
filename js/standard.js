@@ -90,11 +90,12 @@ function resetGame() {
             if (period >= noPeriods && isPlay) {
                 this.stop();
                 clockRed('#match-timer');
-//                var done = confirm('Looks like this game is done.\nClick OK to reset, ready for the next game\nClick cancel to return to the clock for this game')
-//                if (done) {
-//                    this.reset();
-//                    resetGame();
-//                }
+                if (scoreAway == scoreHome && overtimeEnabled) {
+                    var ot = confirm('Looks like a draw! Click OK to go to overtime.\nClick cancel to return to regular time');
+                    if (ot) {
+                        period = noPeriods + 1;
+                    }
+                }
                 return;
             } 
             if (isPlay) {
@@ -408,7 +409,7 @@ $( document ).ready(function () {
         // Close external display if confirmed
         $( window ).on('unload', function () {
             ext.close();
-    })
+        })
     })
     // Bind window unload function
     // Make user connfirm navigation away
@@ -445,6 +446,13 @@ $( document ).ready(function () {
             rollClockIntoBreak = true;
         } else {
             rollClockIntoBreak = false;
+        }
+    })
+    $('#overtime-enabled').change(function () {
+        if ($( this ).prop('checked') == true) {
+            overtimeEnabled = true;
+        } else {
+            overtimeEnabled = false;
         }
     })
 
