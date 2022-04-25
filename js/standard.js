@@ -1,5 +1,5 @@
 // Global scope variables for period type, numbers etc.
-var period, isPlay, noPeriods, lenPeriod, lenBreak, rollClockIntoPeriod, rollClockIntoBreak, gameStarted;
+var period, isPlay, noPeriods, lenPeriod, lenBreak, rollClockIntoPeriod, rollClockIntoBreak, overtimeEnabled, gameStarted;
 // Added variables for improved time-keeping
 var start_time, isRunning;
 var MatchClockTock;
@@ -28,6 +28,7 @@ lenPeriod = 20;
 lenBreak = 10;
 rollClockIntoPeriod = false;
 rollClockIntoBreak = false;
+overtimeEnabled = false;
 
 function resetGame() {
     // Do stuff here
@@ -40,6 +41,7 @@ function resetGame() {
     lenBreak = parseInt($('#match-timer-len-break').val());; // mins
     rollClockIntoPeriod = $('#match-timer-roll-into-period').prop('checked');
     rollClockIntoBreak = $('#match-timer-roll-into-break').prop('checked');
+    overtimeEnabled = $('#overtime-enabled').prop('checked');
     gameStarted = false;
     done = false;
     warningGiven = false;
@@ -397,6 +399,7 @@ $( document ).ready(function () {
     $('#match-timer-len-break').val(lenBreak)
     $('#match-timer-roll-into-period').prop('checked', rollClockIntoPeriod)
     $('#match-timer-roll-into-break').prop('checked', rollClockIntoBreak)
+    $('#overtime-enabled').prop('checked', overtimeEnabled)
 
     // Bind window open function
     $('#window-open').click(function () {
