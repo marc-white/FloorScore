@@ -1,98 +1,34 @@
 {
-    "red":
+    "hulks":
         {
-            "name":"Red", 
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
-            "img-clr":"red",
-            "bg-clr":"red",
-            "tx-clr":"black"
-        },
-    "green":
-        {
-            "name":"Green", 
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
+            "name":"The Incredible Hulks",
+            "img":"./img/team-img/TheIncredibleHulk.png",
             "img-clr":"lawngreen",
             "bg-clr":"lawngreen",
             "tx-clr":"black"
         },
-    "pink":
+    "phantoms":
         {
-            "name":"Pink",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
-            "img-clr":"hotpink",
-            "bg-clr":"hotpink",
-            "tx-clr":"black"
-        },
-    "cyan":
-        {
-            "name":"Cyan",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
-            "img-clr":"cyan",
-            "bg-clr":"cyan",
-            "tx-clr":"black"
-        },
-    "purple":
-        {
-            "name":"Purple",
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "name":"Phantoms",
+            "img":"./img/team-img/ThePhantom.png",
             "img-clr":"purple",
             "bg-clr":"purple",
             "tx-clr":"white"
         },
-    "white":
+    "frozone":
         {
-            "name":"White",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
+            "name":"Frozone",
+            "img":"./img/team-img/I2_-_Frozone_2.webp",
             "img-clr":"white",
             "bg-clr":"white",
             "tx-clr":"black"
         },
-    "yellow":
+    "yellow-rangers":
         {
-            "name":"Yellow",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
+            "name":"The Yellow Rangers",
+            "img":"./img/team-img/YellowRangers.png",
             "img-clr":"yellow",
             "bg-clr":"yellow",
             "tx-clr":"black"
-        },
-    "orange":
-        {
-            "name":"Orange",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
-            "img-clr":"orange",
-            "bg-clr":"orange",
-            "tx-clr":"black"
-        },
-    "navy":
-        {
-            "name":"Navy",
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
-            "img-clr":"navy",
-            "bg-clr":"navy",
-            "tx-clr":"white"
-        },
-    "blue":
-        {
-            "name":"Blue",
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
-            "img-clr":"dodgerblue",
-            "bg-clr":"dodgerblue",
-            "tx-clr":"white"
-        },
-    "black":
-        {
-            "name":"Black",
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
-            "img-clr":"Black",
-            "bg-clr":"Black",
-            "tx-clr":"white"
-        },
-    "brown":
-    {
-        "name":"Brown",
-        "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
-        "img-clr":"saddlebrown",
-        "bg-clr":"saddlebrown",
-        "tx-clr":"white"
-    }
+        }
 }
