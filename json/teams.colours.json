@@ -7,9 +7,9 @@
             "bg-clr":"red",
             "tx-clr":"black"
         },
-    "green":
+    "team1c":
         {
-            "name":"Green", 
+            "name":"WS2022 Team 1C",
             "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
             "img-clr":"lawngreen",
             "bg-clr":"lawngreen",
@@ -31,9 +31,9 @@
             "bg-clr":"cyan",
             "tx-clr":"black"
         },
-    "purple":
+    "team2y":
         {
-            "name":"Purple",
+            "name":"WS2022 Team 2Y",
             "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
             "img-clr":"purple",
             "bg-clr":"purple",
@@ -71,9 +71,9 @@
             "bg-clr":"navy",
             "tx-clr":"white"
         },
-    "blue":
+    "team1a":
         {
-            "name":"Blue",
+            "name":"WS2022 Team 1A",
             "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
             "img-clr":"dodgerblue",
             "bg-clr":"dodgerblue",
