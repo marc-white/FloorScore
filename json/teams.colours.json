@@ -1,12 +1,4 @@
 {
-    "red":
-        {
-            "name":"Red", 
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
-            "img-clr":"red",
-            "bg-clr":"red",
-            "tx-clr":"black"
-        },
     "team1c":
         {
             "name":"WS2022 Team 1C",
@@ -15,81 +7,49 @@
             "bg-clr":"lawngreen",
             "tx-clr":"black"
         },
-    "pink":
+    "dreamboats":
         {
-            "name":"Pink",
+            "name":"Dreamboats",
             "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
             "img-clr":"hotpink",
             "bg-clr":"hotpink",
             "tx-clr":"black"
         },
-    "cyan":
+    "aubergine-machine":
         {
-            "name":"Cyan",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
-            "img-clr":"cyan",
-            "bg-clr":"cyan",
-            "tx-clr":"black"
-        },
-    "team2y":
-        {
-            "name":"WS2022 Team 2Y",
+            "name":"The Aubgergine Machine",
             "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
             "img-clr":"purple",
             "bg-clr":"purple",
             "tx-clr":"white"
         },
-    "white":
+    "team2x":
         {
-            "name":"White",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
-            "img-clr":"white",
-            "bg-clr":"white",
-            "tx-clr":"black"
-        },
-    "yellow":
-        {
-            "name":"Yellow",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
-            "img-clr":"yellow",
-            "bg-clr":"yellow",
-            "tx-clr":"black"
-        },
-    "orange":
-        {
-            "name":"Orange",
+            "name":"WS2022 Team 2X",
             "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
             "img-clr":"orange",
             "bg-clr":"orange",
             "tx-clr":"black"
         },
-    "navy":
+    "blue-da-ba-dee":
         {
-            "name":"Navy",
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
-            "img-clr":"navy",
-            "bg-clr":"navy",
-            "tx-clr":"white"
-        },
-    "team1a":
-        {
-            "name":"WS2022 Team 1A",
+            "name":"Blue Da Ba Dee",
             "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
             "img-clr":"dodgerblue",
             "bg-clr":"dodgerblue",
             "tx-clr":"white"
         },
-    "black":
+    "team2z":
         {
-            "name":"Black",
+            "name":"WS2022 Team 2Z",
             "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
             "img-clr":"Black",
             "bg-clr":"Black",
             "tx-clr":"white"
         },
-    "brown":
+    "team1d":
     {
-        "name":"Brown",
+        "name":"WS2022 Team 1D",
         "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
         "img-clr":"saddlebrown",
         "bg-clr":"saddlebrown",
