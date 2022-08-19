@@ -10,7 +10,7 @@
     "dreamboats":
         {
             "name":"Dreamboats",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
+            "img":"./img/team-img/fabio_iron_sword_wizards_warriors_ii_hero.jpg",
             "img-clr":"hotpink",
             "bg-clr":"hotpink",
             "tx-clr":"black"
@@ -18,7 +18,7 @@
     "aubergine-machine":
         {
             "name":"The Aubgergine Machine",
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "img":"./img/team-img/Eggplant-emoji-emotions-1024x788.png",
             "img-clr":"purple",
             "bg-clr":"purple",
             "tx-clr":"white"
@@ -34,7 +34,7 @@
     "blue-da-ba-dee":
         {
             "name":"Blue Da Ba Dee",
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "img":"./img/team-img/blue-da-ba-dee.gif",
             "img-clr":"dodgerblue",
             "bg-clr":"dodgerblue",
             "tx-clr":"white"
@@ -47,10 +47,10 @@
             "bg-clr":"Black",
             "tx-clr":"white"
         },
-    "team1d":
+    "skidmarks":
     {
-        "name":"WS2022 Team 1D",
-        "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+        "name":"Skidmarks",
+        "img":"./img/team-img/what-does-the-car-with-skid-marks-light-mean-696x431.webp",
         "img-clr":"saddlebrown",
         "bg-clr":"saddlebrown",
         "tx-clr":"white"
