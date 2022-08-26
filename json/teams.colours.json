@@ -1,7 +1,7 @@
 {
-    "team1c":
+    "goblins":
         {
-            "name":"WS2022 Team 1C",
+            "name":"Goblins",
             "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
             "img-clr":"lawngreen",
             "bg-clr":"lawngreen",
@@ -23,10 +23,10 @@
             "bg-clr":"purple",
             "tx-clr":"white"
         },
-    "team2x":
+    "jackolanterns":
         {
-            "name":"WS2022 Team 2X",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
+            "name":"Jack-o'-lanterns",
+            "img":"./img/team-img/JackOLantern.png",
             "img-clr":"orange",
             "bg-clr":"orange",
             "tx-clr":"black"
@@ -39,10 +39,10 @@
             "bg-clr":"dodgerblue",
             "tx-clr":"white"
         },
-    "team2z":
+    "ninjas":
         {
-            "name":"WS2022 Team 2Z",
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "name":"Ninjas",
+            "img":"./img/team-img/ninja-5558752_1280.png",
             "img-clr":"Black",
             "bg-clr":"Black",
             "tx-clr":"white"
