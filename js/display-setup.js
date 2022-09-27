@@ -26,6 +26,7 @@ function formatScreen () {
 
     teamNameHome.css('top', tourneyLogoH+'px');
     var homeLogoW = parseInt(teamImgHome.css('width'));
+    var logoH = parseInt(teamImgHome.css('height'));
     teamNameHome.css('height', 0.4*homeLogoW+'px');
     var homeNameH = parseInt(teamNameHome.css('height'));
 //    $('#team-name-home').css('font-size', 0.38*homeNameH+'px');
@@ -35,7 +36,7 @@ function formatScreen () {
     teamImgHome.css('height', homeLogoW+'px');
     teamImgHome.css('top', tourneyLogoH+homeNameH+homeLogoW+'px');
     teamScoreHome.css('height', homeLogoW+'px');
-    teamScoreHome.css('line-height', homeLogoW+'px');
+    teamScoreHome.css('line-height', logoH+'px');
     // console.log(tourneyLogoH);
     var homeScoreY = homeNameH + tourneyLogoH;
     // console.log(homeScoreY)
