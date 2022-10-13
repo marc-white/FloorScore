@@ -36,7 +36,7 @@ html, body {
     position: absolute;
     left: 2vw;
     top: 2vh;
-    width: 64vw;
+    width: 70vw;
     /*height: 40vh !important;*/
     line-height: 60vh;
     font-family: "Lucida Console", monospace;
@@ -130,16 +130,16 @@ div.team-logo, div.team-score {
 
 div.team-logo {
     position: absolute;
-    top: 43vh;
-    height: 54vh !important;
+    top: 45vh;
+    height: 52vh !important;
     border-radius: 2vh 2vh 0vh 0vh;
 }
 
 div.team-score {
     /*visibility: hidden;*/
     position: absolute;
-    top: 43vh;
-    height: 54vh !important;
+    top: 45vh;
+    height: 52vh !important;
     box-sizing: content-box;
 }
 

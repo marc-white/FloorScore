@@ -54,7 +54,7 @@ function formatScreen () {
     teamImgAway.css('height', awayLogoW+'px');
     teamImgAway.css('top', tourneyLogoH+awayNameH+awayLogoW+'px');
     teamScoreAway.css('height', awayLogoW+'px');
-    teamScoreAway.css('line-height', awayLogoW+'px');
+    teamScoreAway.css('line-height', logoH+'px');
     // console.log(tourneyLogoH);
     var awayScoreY = awayNameH + tourneyLogoH;
     // console.log(awayScoreY)
