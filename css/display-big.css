@@ -253,6 +253,8 @@ div.team-score {
     font-stretch: condensed;
     margin: 0;
     padding: 0;
+    position: absolute;
+    left: -12vh;
 }
 
 .period-arrow-visible {
