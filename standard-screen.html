@@ -73,38 +73,31 @@ $( document ).ready(function () {
 
         // console.log('Updating current period...');
         let noPeriods = parseInt(window.opener.$("#match-timer-no-periods").val());
-        // console.log('No. periods at reset: ' + noPeriods);
+        console.log('No. periods at reset: ' + noPeriods);
         let currPer = window.opener.$('#match-period').html();
-        // console.log('Current period at reset: ' + currPer);
-        for (let i = 1; i <= noPeriods; i++) {
-            let box = $('#period-' + i);
+        console.log('Current period at reset: ' + currPer);
+        for (let i = 1; i <= 1; i++) {
+            let box = $('.period-box');
+            console.log("Period box:");
+            console.log(box);
             box.removeClass().addClass('period-box');
             let currPerInt = parseInt(currPer);
-            if (i < currPerInt) {
-                // Stop any animation on this box, if it exists
-                // console.log('Making box ' + i + ' complete');
-                box.addClass('period-box-complete');
-            } else if (currPerInt == i) {
-                if (currPer.includes('break')) {
+            console.log("Current period is " + currPerInt + ", currPer is " + currPer);
+            if (currPer.includes('break')) {
                     // Stop any current period box animations
-                    // console.log('Making box ' + i + ' next');
+                    console.log('Making box ' + i + ' next');
                     box.addClass('period-box-next');
+                    box.html(currPerInt);
                     // console.log('Looking for ' + '#period-arrow-' + (i-1) + '-' + i);
                     let perArrowNow = $('#period-arrow-' + (i-1) + '-' + i);
                     perArrowNow.addClass('period-arrow-visible');
                     blinkActive('.period-arrow-visible');
                 } else {
                     // Stop any current period arrow animations
-                    // console.log('Making box ' + i + ' active');
+                    console.log('Making box ' + i + ' active');
                     box.addClass('period-box-active');
                     blinkBackground('.period-box-active');
                 }
-            } else {
-                // Remove any background-color change from the box
-                box.css('background-color', '');
-                box.removeClass('period-box-active').removeClass('period-box-complete');
-                box.finish();
-            }
         }
 
         formatScreen();
@@ -119,27 +112,27 @@ $( document ).ready(function () {
     function updateNoPeriods () {
         // End any and all period-related animations, and then remove any styles
         // this might create
-        let periodRelated = $("[class^=period-]");
-        periodRelated.removeClass('period-box-active').removeClass('period-arrow-visible');
-        periodRelated.finish();
-        periodRelated.css('background-color', '').css('opacity', '');
-
-        matchPeriod = $('#match-period');
-        matchPeriod.html('');
-        noPeriods = window.opener.$('#match-timer-no-periods').val();
-        // console.log('noPeriods = ' + noPeriods);
-        for (let i = 1; i <= noPeriods; i++) {
-            matchPeriod.append("<div id='period-" + i + "' class='period-box'>" + i + "</div>");
-            if (i < noPeriods) {
-                matchPeriod.append("<div id='period-arrow-" + i + "-" + (i+1) + "' class='period-arrow'>&#10095;</div>")
-            }
-        }
-        let adverts = $('#advertising');
-        if (noPeriods > 5) {
-            adverts.css('visibility', 'hidden');
-        } else {
-            adverts.css('visibility', 'visible');
-        }
+        // let periodRelated = $("[class^=period-]");
+        // periodRelated.removeClass('period-box-active').removeClass('period-arrow-visible');
+        // periodRelated.finish();
+        // periodRelated.css('background-color', '').css('opacity', '');
+        //
+        // matchPeriod = $('#match-period');
+        // matchPeriod.html('');
+        // noPeriods = window.opener.$('#match-timer-no-periods').val();
+        // // console.log('noPeriods = ' + noPeriods);
+        // // for (let i = 1; i <= noPeriods; i++) {
+        // //     matchPeriod.append("<div id='period-" + i + "' class='period-box'>" + i + "</div>");
+        // //     if (i < noPeriods) {
+        // //         matchPeriod.append("<div id='period-arrow-" + i + "-" + (i+1) + "' class='period-arrow'>&#10095;</div>")
+        // //     }
+        // // }
+        // let adverts = $('#advertising');
+        // // if (noPeriods > 5) {
+        // //     adverts.css('visibility', 'hidden');
+        // // } else {
+        // //     adverts.css('visibility', 'visible');
+        // // }
         updateTimer();
         updatePeriod();
         formatScreen();
@@ -234,7 +227,9 @@ $( document ).ready(function () {
 <!--<div class='bgimage' id='tourney-logo' style='background-image:url(./img/tourney/FACTBanner.png)'></div>-->
 
 <div id='match-timer'></div>
-<div id='match-period'>P</div>
+<div id='match-period' class="period-box">
+        1
+</div>
 <div id='advertising'>
     <table>
     <tr><td><img src='./img/bm_afa_act_logo_white_transparent_rgb.png' /></td>

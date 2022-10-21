@@ -56,10 +56,10 @@ html, body {
     /*text-align: center;*/
     font-family: "Calibri", serif;
     font-size: 60vh;
-    width: 32vw;
+    width: 24vw;
     /*height: 20vh;*/
     position: absolute;
-    left: 66vw;
+    right: 2vw;
     top: 2vh;
     /*background: cyan;*/
     text-align: center;
@@ -232,7 +232,7 @@ div.team-score {
 }
 
 .period-box-active {
-    background: white;
+    background: grey;
     border-color: white;
     color: black;
 }

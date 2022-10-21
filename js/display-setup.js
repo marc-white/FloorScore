@@ -66,15 +66,16 @@ function formatScreen () {
     // Timer
     timerW = parseInt(matchTimer.css('width'));
     // console.log(timerW);
-    matchTimer.css('height', 0.3*timerW+"px");
+    matchTimer.css('height', 0.28*timerW+"px");
     matchTimer.css('line-height', 0.32*timerW+"px");
     timerH = parseInt(matchTimer.css('height'));
+    timerB = parseInt(matchTimer.css('border-width'));
     matchTimer.css('font-size', 0.84*timerH+"px");
     timerFS = parseInt(matchTimer.css('font-size'));
-    matchPeriod.css('top', tourneyLogoH+timerH+'px');
-    matchPeriod.css('height', 0.65 * timerH + "px");
-    // matchPeriod.css('line-height', 0.40 * timerH + "px");
-    matchPeriod.css('font-size', 0.45 * timerH + "px");
+    // matchPeriod.css('top', tourneyLogoH+timerH+'px');
+    matchPeriod.css('height', timerH + 2*timerB + "px");
+    matchPeriod.css('line-height', 0.98*timerH + "px");
+    matchPeriod.css('font-size', timerFS);
     periodH = parseInt(matchPeriod.css('height'));
     periodBoxes = $( '.period-box' );
     periodBoxes.css('width', periodBoxes.css('height'));
