@@ -63,7 +63,7 @@ html, body {
     top: 2vh;
     /*background: cyan;*/
     text-align: center;
-    color: white;
+    /*color: white;*/
     font-weight: bold;
     padding: 0;
     margin: 0;
@@ -232,7 +232,7 @@ div.team-score {
 }
 
 .period-box-active {
-    background: grey;
+    background: white;
     border-color: white;
     color: black;
 }
