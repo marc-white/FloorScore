@@ -81,11 +81,13 @@ $( document ).ready(function () {
             console.log("Period box:");
             console.log(box);
             box.removeClass().addClass('period-box');
+            box.html("");
+            $('.period-arrow').remove();
             let currPerInt = parseInt(currPer);
             console.log("Current period is " + currPerInt + ", currPer is " + currPer);
             if (currPer.includes('break')) {
                     // Stop any current period box animations
-                    console.log('Making box ' + i + ' next');
+                    console.log('Making box ' + currPer + ' next');
                     box.addClass('period-box-next');
                     box.html(currPerInt);
                     // console.log('Looking for ' + '#period-arrow-' + (i-1) + '-' + i);
@@ -95,8 +97,8 @@ $( document ).ready(function () {
                     blinkActive('.period-arrow-visible');
                 } else {
                     // Stop any current period arrow animations
+                    box.html(currPerInt);
                     console.log('Making box ' + i + ' active');
-                    $('.period-arrow').remove();
                     box.addClass('period-box-active');
                     blinkBackground('.period-box-active');
                 }
