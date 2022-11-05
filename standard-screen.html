@@ -2,9 +2,11 @@
 <head>
 <title>Rolling timer</title>
 <link rel='stylesheet' href='./css/display-big.css' />
+<link rel='stylesheet' href='./css/jquery.rollingBorder.css' />
 <script src='./js/jquery-3.1.0.min.js'></script>
 <script src="./js/jquery-ui.min.js"></script>
 <script src='./js/display-setup.js'></script>
+<script src='./js/jquery.rollingBorder.js'></script>
 <script>
 var observer, observerPeriod, targetNode, targetNodePeriod, observerConfig;
 $( document ).ready(function () {
@@ -44,15 +46,28 @@ $( document ).ready(function () {
         subtree: true
     };
     targetNode = window.opener.document.querySelector('#match-timer');
+    var rollingBorder ;
     function updateTimer (mutations) {
         var t = window.opener.$('#match-timer');
         var currTime = t.html();
         var currBorder = t.css("borderLeftColor");
         // console.log(currTime)
         var timerDisp = $('#match-timer');
+        var oldBorder = timerDisp.css("borderLeftColor");
         timerDisp.html(currTime);
         timerDisp.css('border', '2px solid ' + currBorder);
         $('#match-timer #timerColon').css('color', currBorder);
+        if (currBorder != oldBorder) {
+            if (rollingBorder != null) {
+                rollingBorder.destroy();
+            }
+            rollingBorder = $('#match-timer').rollingBorder({
+                padding: 0,
+                color: "black",
+                width: 4,
+                length: "100%"
+            });
+        }
 
         formatScreen();
     }
@@ -193,7 +208,8 @@ $( document ).ready(function () {
             } else {
                 elem.css('border', '0px solid none');
             }
-            if (e.includes('img')) {
+            if ((e == "#team-img-home") || (e == "#team-score-away")) {
+                console.log("Inside team box alteration");
                 elem.css('border-right-width', '0');
             } else {
                 elem.css('border-left-width', '0');
