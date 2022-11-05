@@ -42,8 +42,8 @@ html, body {
     font-family: "Lucida Console", monospace;
     font-size: 50vh;
     text-align: center;
-    /*color: white;*/
-    color: #E3FF00;
+    color: white;
+    /*color: #E3FF00;*/
     background: rgb(30,30,30);
     border: 2px solid rgb(30,30,30);
     border-radius: 2vh;
@@ -233,9 +233,9 @@ div.team-score {
 }
 
 .period-box-active {
-    background: white;
+    background: black;
     border-color: white;
-    color: black;
+    color: white;
 }
 
 .period-box-complete {
@@ -250,12 +250,12 @@ div.team-score {
     color: black;
     background: black;
     font-weight: lighter;
-    font-size: 67%;
+    font-size: 55%;
     font-stretch: condensed;
     margin: 0;
     padding: 0;
     position: absolute;
-    left: -12vh;
+    left: -10vh;
 }
 
 .period-arrow-visible {
