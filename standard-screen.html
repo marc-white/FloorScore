@@ -61,12 +61,14 @@ $( document ).ready(function () {
             if (rollingBorder != null) {
                 rollingBorder.destroy();
             }
-            rollingBorder = $('#match-timer').rollingBorder({
-                padding: 0,
-                color: "black",
-                width: 4,
-                length: "100%"
-            });
+            if (t.hasClass("clockGreen")) {
+                rollingBorder = $('#match-timer').rollingBorder({
+                    padding: 0,
+                    color: "black",
+                    width: 4,
+                    length: "100%"
+                });
+            }
         }
 
         formatScreen();
@@ -109,13 +111,13 @@ $( document ).ready(function () {
                     box.prepend("<div class='period-arrow'>&#10095;</div>");
                     let perArrowNow = $('.period-arrow');
                     perArrowNow.addClass('period-arrow-visible');
-                    blinkActive('.period-arrow-visible');
+                    // blinkActive('.period-arrow-visible');
                 } else {
                     // Stop any current period arrow animations
                     box.html(currPerInt);
                     console.log('Making box ' + i + ' active');
                     box.addClass('period-box-active');
-                    blinkBackground('.period-box-active');
+                    // blinkBackground('.period-box-active');
                 }
         }
 
