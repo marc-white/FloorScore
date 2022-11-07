@@ -44,7 +44,8 @@ html, body {
     text-align: center;
     color: white;
     /*color: #E3FF00;*/
-    background: rgb(30,30,30);
+    /*background: rgb(30,30,30);*/
+    background: black;
     border: 2px solid rgb(30,30,30);
     border-radius: 2vh;
 }

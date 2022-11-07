@@ -65,7 +65,7 @@ $( document ).ready(function () {
                 rollingBorderTimer = $('#match-timer').rollingBorder({
                     padding: 0,
                     color: "black",
-                    width: 4,
+                    width: 7,
                     length: "100%"
                 });
             }
@@ -78,6 +78,7 @@ $( document ).ready(function () {
     updateTimer();
     observer.observe(targetNode, observerConfig);
 
+    var rollingBorderPeriod;
     targetNodePeriod = window.opener.document.querySelector('#match-period');
     function updatePeriod (mutations) {
 
@@ -102,9 +103,9 @@ $( document ).ready(function () {
         $('.period-arrow').remove();
         let currPerInt = parseInt(currPer);
         // console.log("Current period is " + currPerInt + ", currPer is " + currPer);
-        var rollingBorderPeriod ;
         if (rollingBorderPeriod != null) {
             rollingBorderPeriod.destroy();
+            rollingBorderPeriod = null ;
         }
         if (currPer.includes('break')) {
                 // Stop any current period box animations
@@ -115,16 +116,17 @@ $( document ).ready(function () {
                 box.prepend("<div class='period-arrow'>&#10095;</div>");
                 let perArrowNow = $('.period-arrow');
                 perArrowNow.addClass('period-arrow-visible');
+                blinkActive(".period-arrow-visible");
             } else {
                 // Stop any current period arrow animations
                 box.html(currPerInt);
                 box.addClass('period-box-active');
-            rollingBorderPeriod = $(box).rollingBorder({
-                padding: 0,
-                color: "black",
-                width: 4,
-                length: "100%"
-            });
+                rollingBorderPeriod = box.rollingBorder({
+                    padding: 0,
+                    color: "black",
+                    width: 7,
+                    length: "100%"
+                });
             }
 
 
