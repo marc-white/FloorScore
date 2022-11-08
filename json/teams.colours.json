@@ -94,5 +94,21 @@
         "img-clr":"saddlebrown",
         "bg-clr":"saddlebrown",
         "tx-clr":"white"
+    },
+    "schooney-tunes":
+    {
+        "name":"Schooney Tunes",
+        "img":"./img/team-img/SchooneyTunesFinal.png",
+        "img-clr":"white",
+        "bg-clr":"white",
+        "tx-clr":"#e23940"
+    },
+    "test-eagles":
+    {
+        "name":"Test Eagles",
+        "img":"./img/team-img/TestEagles.png",
+        "img-clr":"black",
+        "bg-clr":"black",
+        "tx-clr":"#c1a675"
     }
 }
