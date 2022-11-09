@@ -10,7 +10,7 @@
     "green":
         {
             "name":"Green", 
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
+            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
             "img-clr":"forestgreen",
             "bg-clr":"forestgreen",
             "tx-clr":"white"
