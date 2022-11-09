@@ -210,6 +210,7 @@ $( document ).ready(function () {
         let homeSecondaryColor = homeScore.css("color");
         let awayPrimaryColor = awayImg.css("background-color");
         let awaySecondaryColor = awayScore.css("color");
+        let scoreBorderSize = "5px";
 
         var bgcol = $( 'body' ).css('background-color');
         // Force the scores to have bgcol background, and text in the lighter of the two
@@ -227,7 +228,7 @@ $( document ).ready(function () {
         ].forEach(function (e) {
             var elem = $(e);
             if (elem.css('background-color') == bgcol) {
-                elem.css('border', '2px solid gray');
+                elem.css('border', scoreBorderSize + ' solid gray');
                 if ((e == "#team-score-home") || (e == "#team-img-home")) {
                     if (homePrimaryColor != bgcol) {
                         elem.css('border-color', homePrimaryColor);
@@ -242,7 +243,8 @@ $( document ).ready(function () {
                     }
                 }
             } else {
-                elem.css('border', '0px solid none');
+                elem.css('border', scoreBorderSize + ' solid none');
+                elem.css('border-color', elem.css('background-color'));
             }
             if ((e == "#team-img-home") || (e == "#team-score-away")) {
                 elem.css('border-right-width', '0');

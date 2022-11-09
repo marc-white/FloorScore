@@ -142,7 +142,7 @@ div.team-score {
     /*visibility: hidden;*/
     position: absolute;
     top: 45vh;
-    /*height: 52vh !important;*/
+    height: 52vh !important;
     box-sizing: border-box;
 }
 
