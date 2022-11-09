@@ -135,14 +135,15 @@ div.team-logo {
     top: 45vh;
     height: 52vh !important;
     border-radius: 2vh 2vh 0vh 0vh;
+    box-sizing: border-box;
 }
 
 div.team-score {
     /*visibility: hidden;*/
     position: absolute;
     top: 45vh;
-    height: 52vh !important;
-    box-sizing: content-box;
+    /*height: 52vh !important;*/
+    box-sizing: border-box;
 }
 
 #team-img-home, #team-name-home {
