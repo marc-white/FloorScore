@@ -203,8 +203,7 @@ $( document ).ready(function () {
         awayScore.text( currAwayScore );
         awayImg.css('color', awayScore.css('color'));
 
-        // Add a grey border if the team colour matches the screen background
-        // Otherwise, make sure the border is 0
+        // Add a border if the box bg colour matches the screen background
 
         let homePrimaryColor = homeImg.css("background-color");
         let homeSecondaryColor = homeScore.css("color");
@@ -235,11 +234,17 @@ $( document ).ready(function () {
                     } else {
                         elem.css('border-color', homeSecondaryColor);
                     }
+                    if (e == "#team-score-home") {
+                        // Set score to display in lightest team colour
+                    }
                 } else if ((e == "#team-score-away") || (e == "#team-img-away")) {
                     if (awayPrimaryColor != bgcol) {
                         elem.css('border-color', awayPrimaryColor);
                     } else {
                         elem.css('border-color', awaySecondaryColor);
+                    }
+                    if (e == "#team-score-home") {
+                        // Set score to display in lightest team colour
                     }
                 }
             } else {
