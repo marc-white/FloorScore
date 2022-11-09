@@ -9,6 +9,7 @@
 <script src='./js/jquery.rollingBorder.js'></script>
 <script>
 var observer, observerPeriod, targetNode, targetNodePeriod, observerConfig;
+var scoreBorderSize = "5px";
 $( document ).ready(function () {
     // Initialise manually
     var currTime = window.opener.$('#match-timer').html();
@@ -55,7 +56,7 @@ $( document ).ready(function () {
         var timerDisp = $('#match-timer');
         var oldBorder = timerDisp.css("borderLeftColor");
         timerDisp.html(currTime);
-        timerDisp.css('border', '2px solid ' + currBorder);
+        timerDisp.css('border', scoreBorderSize + ' solid ' + currBorder);
         $('#match-timer #timerColon').css('color', currBorder);
         if (currBorder != oldBorder) {
             if (rollingBorderTimer != null) {
@@ -87,7 +88,7 @@ $( document ).ready(function () {
         let periodRelated = $("[class^=period-]");
         periodRelated.removeClass('period-box-active').removeClass('period-arrow-visible');
         periodRelated.finish();
-        periodRelated.css('background-color', '').css('opacity', '');
+        periodRelated.css('background-color', '').css('opacity', '').css('border-width', scoreBorderSize);
 
         // console.log('Updating current period...');
         let noPeriods = parseInt(window.opener.$("#match-timer-no-periods").val());
@@ -213,7 +214,6 @@ $( document ).ready(function () {
         console.log(RGBStrToHSL(awayPrimaryColor));
         console.log(awaySecondaryColor);
         console.log(RGBStrToHSL(awaySecondaryColor));
-        let scoreBorderSize = "5px";
 
         let homeColors = [homePrimaryColor, homeSecondaryColor];
         let awayColors = [awayPrimaryColor, awaySecondaryColor];
