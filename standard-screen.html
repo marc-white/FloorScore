@@ -191,6 +191,7 @@ $( document ).ready(function () {
         homeScore.text( currHomeScore );
         // console.log(homeScore.attr('style'));
         homeImg.css('color', homeScore.css('color'));
+        awayScore.css("background-color", bgcol);
 
         var currAwayName = window.opener.$('#team-away option:selected').text();
         $('#team-name-away td').text(currAwayName);
@@ -205,7 +206,20 @@ $( document ).ready(function () {
         // Add a grey border if the team colour matches the screen background
         // Otherwise, make sure the border is 0
 
+        let homePrimaryColor = homeImg.css("background-color");
+        let homeSecondaryColor = homeScore.css("color");
+        let awayPrimaryColor = awayImg.css("background-color");
+        let awaySecondaryColor = awayScore.css("color");
+        let scoreBorderSize = "5px";
+
         var bgcol = $( 'body' ).css('background-color');
+        // Force the scores to have bgcol background, and text in the lighter of the two
+        // team colours
+        console.log(bgcol);
+        awayScore.css("background-color", bgcol);
+        awayScore.css("color", "rgb(255,255,255)");
+        homeScore.css("background-color", bgcol);
+        awayScore.css("color", "rgb(255,255,255)");
         [
             '#team-score-home',
             '#team-score-away',
@@ -214,13 +228,25 @@ $( document ).ready(function () {
         ].forEach(function (e) {
             var elem = $(e);
             if (elem.css('background-color') == bgcol) {
-                elem.css('border', '2px solid gray');
-                elem.css('border-color', elem.css('color'));
+                elem.css('border', scoreBorderSize + ' solid gray');
+                if ((e == "#team-score-home") || (e == "#team-img-home")) {
+                    if (homePrimaryColor != bgcol) {
+                        elem.css('border-color', homePrimaryColor);
+                    } else {
+                        elem.css('border-color', homeSecondaryColor);
+                    }
+                } else if ((e == "#team-score-away") || (e == "#team-img-away")) {
+                    if (awayPrimaryColor != bgcol) {
+                        elem.css('border-color', awayPrimaryColor);
+                    } else {
+                        elem.css('border-color', awaySecondaryColor);
+                    }
+                }
             } else {
-                elem.css('border', '0px solid none');
+                elem.css('border', scoreBorderSize + ' solid none');
+                elem.css('border-color', elem.css('background-color'));
             }
             if ((e == "#team-img-home") || (e == "#team-score-away")) {
-                console.log("Inside team box alteration");
                 elem.css('border-right-width', '0');
             } else {
                 elem.css('border-left-width', '0');
