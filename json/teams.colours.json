@@ -7,10 +7,10 @@
             "bg-clr":"red",
             "tx-clr":"black"
         },
-    "green":
+    "green-goblins":
         {
-            "name":"Green", 
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "name":"Green Goblins",
+            "img":"./img/team-img/goblin-6683545_1280.png",
             "img-clr":"forestgreen",
             "bg-clr":"forestgreen",
             "tx-clr":"white"
@@ -31,10 +31,10 @@
             "bg-clr":"cyan",
             "tx-clr":"black"
         },
-    "purple":
+    "barneys":
         {
-            "name":"Purple",
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "name":"Barneys",
+            "img":"./img/team-img/Barney_the_Dinosaur.png",
             "img-clr":"purple",
             "bg-clr":"purple",
             "tx-clr":"white"
@@ -71,18 +71,18 @@
             "bg-clr":"navy",
             "tx-clr":"white"
         },
-    "blue":
+    "team-jeopardy":
         {
-            "name":"Blue",
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "name":"Team Jeopardy",
+            "img":"./img/team-img/jeopardy.png.webp",
             "img-clr":"dodgerblue",
             "bg-clr":"dodgerblue",
             "tx-clr":"white"
         },
-    "black":
+    "kambah-krusaders":
         {
-            "name":"Black",
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "name":"Kambah Krusaders",
+            "img":"./img/team-img/Crusaderwarrows.extract.png",
             "img-clr":"Black",
             "bg-clr":"Black",
             "tx-clr":"white"
