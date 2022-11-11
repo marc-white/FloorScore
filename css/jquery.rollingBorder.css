@@ -1,0 +1,82 @@
+/* From https://github.com/leolin0704/RollingBorder/ */
+.rolling-border-box {
+    position: absolute;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.rolling-border-box div {
+    position: absolute;
+    border: solid 0 rgba(255, 0, 0, 0.5);
+    height: 50%;
+    width: 50%;
+    animation: leftToRight 1s infinite linear;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+.rolling-border-box .rolling-border-line-1 {
+    border-top-width: 2px;
+    height: 0;
+    animation-name: rollingLeftToRight;
+}
+
+.rolling-border-box .rolling-border-line-3 {
+    border-top-width: 2px;
+    height: 0;
+    bottom: 0;
+    animation-name: rollingRightToLeft;
+}
+
+.rolling-border-box .rolling-border-line-2 {
+    border-left-width: 2px;
+    width: 0;
+    bottom: -100%;
+    animation-name: rollingBottomToTop;
+    animation-delay: 0.5s;
+}
+
+.rolling-border-box .rolling-border-line-4 {
+    border-left-width: 2px;
+    width: 0;
+    right: 0;
+    top: -100%;
+    animation-name: rollingTopToBottom;
+    animation-delay: 0.5s;
+}
+
+@keyframes rollingLeftToRight {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes rollingRightToLeft {
+    0% {
+        right: -100%;
+    }
+    100% {
+        right: 100%;
+    }
+}
+
+@keyframes rollingTopToBottom {
+    0% {
+        top: -100%;
+    }
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes rollingBottomToTop {
+    0% {
+        bottom: -100%;
+    }
+    100% {
+        bottom: 100%;
+    }
+}
