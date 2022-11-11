@@ -363,7 +363,7 @@ $( document ).ready(function () {
     console.log('Initializing howler...');
     Howler.html5PoolSize = 1000 ;
     buzzer = new Howl({
-        src: ['47434BUZZER.mp3', '47434BUZZER.ogg', '47434BUZZER.wav'],
+        src: ['mp3/47434BUZZER.mp3', 'mp3/47434BUZZER.ogg', 'mp3/47434BUZZER.wav'],
         xhr: {
             method: 'GET',
             headers: {
@@ -372,12 +372,12 @@ $( document ).ready(function () {
         },
         preload: true,
         autoplay: false,
-    })
+    });
     warningThirty = new Howl({
-        src: ['thirty.mp3', 'thirty.ogg', 'thirty.wav'],
+        src: ['mp3/thirty.mp3', 'mp3/thirty.ogg', 'mp3/thirty.wav'],
         preload: true,
         autoplay: false,
-    })
+    });
 
     // console.log('Initializing lowLag...');
     // lowLag.init({sm2url: './js/sm2/swf/', urlPrefix: './mp3/'});
@@ -399,7 +399,7 @@ $( document ).ready(function () {
     [
     "./json/teams.colours.json"
     ].forEach(function (i) {
-        ($.getJSON(i+"?callback=?", function (json) {
+        ($.getJSON(i, function (json) {
             // // console.log('Have team JSON!');
             $.extend(teamdata, json);
             populateTeamSelects(json);
