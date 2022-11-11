@@ -1,5 +1,5 @@
 // Global scope variables for period type, numbers etc.
-var period, isPlay, noPeriods, lenPeriod, lenBreak, rollingClock, gameStarted;
+var period, isPlay, noPeriods, lenPeriod, lenBreak, rollClockIntoPeriod, rollClockIntoBreak, gameStarted;
 // Added variables for improved time-keeping
 var start_time, isRunning;
 var MatchClockTock;
@@ -26,7 +26,8 @@ var scoreHome, scoreAway;
 noPeriods = 3;
 lenPeriod = 20;
 lenBreak = 10;
-rollingClock = false;
+rollClockIntoPeriod = false;
+rollClockIntoBreak = false;
 
 function resetGame() {
     // Do stuff here
@@ -37,7 +38,8 @@ function resetGame() {
     noPeriods = parseInt($('#match-timer-no-periods').val()); // mins
     lenPeriod = parseInt($('#match-timer-len-period').val()); // mins
     lenBreak = parseInt($('#match-timer-len-break').val());; // mins
-    rollingClock = $('#match-timer-rolling').prop('checked');
+    rollClockIntoPeriod = $('#match-timer-roll-into-period').prop('checked');
+    rollClockIntoBreak = $('#match-timer-roll-into-break').prop('checked');
     gameStarted = false;
     done = false;
     warningGiven = false;
@@ -122,8 +124,11 @@ function resetGame() {
                 // currentTime += incrementTime / 10.;
             }
             // this.Timer.stop().once();
-            if (rollingClock && period <= noPeriods && period != 1 && !this.go) {
+            if (rollClockIntoPeriod && period <= noPeriods && period != 1 && !this.go && isPlay) {
 //                console.log('Autostart triggered')
+                this.pause();
+            }
+            if (rollClockIntoBreak && period <= noPeriods && period != 1 && !this.go && !isPlay) {
                 this.pause();
             }
         }
@@ -420,7 +425,8 @@ $( document ).ready(function () {
     $('#match-timer-no-periods').val(noPeriods)
     $('#match-timer-len-period').val(lenPeriod)
     $('#match-timer-len-break').val(lenBreak)
-    $('#match-timer-rolling').prop('checked', rollingClock)
+    $('#match-timer-roll-into-period').prop('checked', rollClockIntoPeriod)
+    $('#match-timer-roll-into-break').prop('checked', rollClockIntoBreak)
 
     // Bind window open function
     $('#window-open').click(function () {
@@ -454,11 +460,18 @@ $( document ).ready(function () {
     $('#match-timer-len-break').change(function () {
         lenBreak = parseInt($( this ).val());
     })
-    $('#match-timer-rolling').change(function () {
+    $('#match-timer-roll-into-period').change(function () {
         if ($( this ).prop('checked') == true) {
-            rollingClock = true;
+            rollClockIntoPeriod = true;
         } else {
-            rollingClock = false;
+            rollClockIntoPeriod = false;
+        }
+    })
+    $('#match-timer-roll-into-break').change(function () {
+        if ($( this ).prop('checked') == true) {
+            rollClockIntoBreak = true;
+        } else {
+            rollClockIntoBreak = false;
         }
     })
 

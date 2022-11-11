@@ -55,9 +55,9 @@ function resetGame( trigger_restart ) {
             // } else {
             //     $('#match-timer').text(MatchClockTock.lap('{ss}.{ll}'));
             // }
-            $('#match-timer').text(formatTime(this.lap()));
+            $('#match-timer').html(formatTime(this.lap()));
             if ((!isPlay) && (this.lap() < 30*1000) && (this.lap() > 29*1000) && (!warningGiven)) {
-                warningThiry.play();
+                lowLag.play('warningThirty');
                 warningGiven = true;
             }
             if (this.go) {
@@ -72,9 +72,10 @@ function resetGame( trigger_restart ) {
 //        onStart: function () {
 //            console.log('Inside onStart');
 //        },
-        complete: function () {
-            console.log('Inside onComplete');
-            buzzer.play();
+        complete: function (playSound = true) {
+            // console.log('Inside onComplete');
+            if (playSound) { lowLag.play('buzzer'); }
+//            setTimeout(function () {console.log('Game done'); }, 1000);
             if (period >= noPeriods && isPlay) {
                 isPlay = false;
 //                this.stop();
@@ -201,14 +202,18 @@ function toggleClock(clock) {
 
 function clockRed(id) {
     var $select = $(id);
-    $select.attr('style', '');
-    $select.attr('style', 'border-right: 10px solid red;');
+    // $select.attr('style', '');
+    // $select.attr('style', 'border-right: 10px solid red;');
+    $select.removeClass('clockGreen');
+    $select.addClass('clockRed');
 }
 
 function clockGreen(id) {
     var $select = $(id);
-    $select.attr('style', '');
-    $select.attr('style', 'border-right: 10px solid green;');
+    // $select.attr('style', '');
+    // $select.attr('style', 'border-right: 10px solid green;');
+    $select.removeClass('clockRed');
+    $select.addClass('clockGreen');
 }
 
 // Common functions
@@ -221,7 +226,7 @@ function formatTime(time) {
     var min = parseInt(time / 60000),
         sec = parseInt(time / 1000) - (min * 60),
         mills = Math.floor((time - (sec * 1000) - (min * 60000)) / 100);
-    return (min > 0 ? pad(min, 2) + ":" : "00:") + pad(sec, 2) + (min < 1 ? "." + mills : "");
+    return (min > 0 ? pad(min, 2) + "<g id='timerColon'>:</g>" : "<g id='timerRedundant'>0:</g>") + pad(sec, 2) + (min < 1 ? "<g id='timerColon'>.</g>" + mills : "");
 }
 function startGame() {
     gameStarted = true;
@@ -334,6 +339,13 @@ function alterPeriod(inc) {
 
 // On-page-load events
 $( document ).ready(function () {
+
+    if ( $( 'div#lowLag ').length == 0 ) {
+        console.log('Initializing lowLag...');
+        lowLag.init({sm2url: './js/sm2/swf/', urlPrefix: './mp3/'});
+        lowLag.load(['47434BUZZER.mp3', '47434BUZZER.ogg', '47434BUZZER.wav'], 'buzzer');
+        lowLag.load(['thirty.mp3', 'thirty.ogg', 'thirty.wav'], 'warningThirty');
+    }
 
     clockToggleH = parseInt($('#clock-toggle').css('height'));
     $('#clock-toggle').css('height', 2*clockToggleH + 'px');

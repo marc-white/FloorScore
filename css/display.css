@@ -69,6 +69,11 @@ html, body {
     margin: 0;
 }
 
+.match-period-rolling:before {
+    content: "Period: ";
+    font-weight: normal;
+}
+
 /*#match-period::before {*/
 /*    content: "Period: ";*/
 /*    font-weight: normal;*/
