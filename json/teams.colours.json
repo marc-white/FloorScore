@@ -2,10 +2,10 @@
     "red":
         {
             "name":"Red", 
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
+            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
             "img-clr":"red",
             "bg-clr":"red",
-            "tx-clr":"black"
+            "tx-clr":"white"
         },
     "green":
         {
