@@ -220,6 +220,8 @@ $( document ).ready(function () {
 
         let homeColorsL = homeColors.map((rgb) => RGBStrToHSL(rgb)[2]);
         let awayColorsL = awayColors.map((rgb) => RGBStrToHSL(rgb)[2]);
+        console.log(homeColorsL);
+        console.log(awayColorsL);
         let homeColorLightest = homeColors[homeColorsL.indexOf(homeColorsL.max())];
         let awayColorLightest = awayColors[awayColorsL.indexOf(awayColorsL.max())];
 
