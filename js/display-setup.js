@@ -9,6 +9,57 @@ var advertImgList = [
 var advertShown = 0;
 var advertisingCadence = 45000.;
 
+// From https://www.30secondsofcode.org/js/s/rgb-to-hsl
+const RGBToHSL = (r, g, b) => {
+    r /= 255;
+    g /= 255;
+    b /= 255;
+    const l = Math.max(r, g, b);
+    const s = l - Math.min(r, g, b);
+    const h = s
+        ? l === r
+            ? (g - b) / s
+            : l === g
+                ? 2 + (b - r) / s
+                : 4 + (r - g) / s
+        : 0;
+    return [
+        60 * h < 0 ? 60 * h + 360 : 60 * h,
+        100 * (s ? (l <= 0.5 ? s / (2 * l - s) : s / (2 - (2 * l - s))) : 0),
+        (100 * (2 * l - s)) / 2,
+    ];
+}
+
+// From https://www.geeksforgeeks.org/how-to-convert-rgb-color-string-into-an-object-in-javascript/
+function RGBStrToHSL(rgb) {
+    let colors = ['rd', 'gr', 'bl']
+    // Getting the index of "(" and ")"
+    // by using the indexOf() method
+        let colorArr = rgb.slice(
+            rgb.indexOf("(") + 1,
+            rgb.indexOf(")")
+        ).split(", ");
+
+        let obj = new Object();
+
+    // Insert the values into obj
+        colorArr.forEach((k, i) => {
+            obj[colors[i]] = k
+        });
+
+    return RGBToHSL(obj.rd, obj.gr, obj.bl);
+}
+
+// Augment array to have min/max function
+// From https://stackoverflow.com/questions/1669190/find-the-min-max-element-of-an-array-in-javascript
+Array.prototype.max = function() {
+    return Math.max.apply(null, this);
+};
+
+Array.prototype.min = function() {
+    return Math.min.apply(null, this);
+};
+
 function formatScreen () {
     // console.log('Running formatScreen()...');
     // Home team logo & score
@@ -26,6 +77,7 @@ function formatScreen () {
 
     teamNameHome.css('top', tourneyLogoH+'px');
     var homeLogoW = parseInt(teamImgHome.css('width'));
+    var logoH = parseInt(teamImgHome.css('height'));
     teamNameHome.css('height', 0.4*homeLogoW+'px');
     var homeNameH = parseInt(teamNameHome.css('height'));
 //    $('#team-name-home').css('font-size', 0.38*homeNameH+'px');
@@ -35,7 +87,7 @@ function formatScreen () {
     teamImgHome.css('height', homeLogoW+'px');
     teamImgHome.css('top', tourneyLogoH+homeNameH+homeLogoW+'px');
     teamScoreHome.css('height', homeLogoW+'px');
-    teamScoreHome.css('line-height', homeLogoW+'px');
+    teamScoreHome.css('line-height', logoH+'px');
     // console.log(tourneyLogoH);
     var homeScoreY = homeNameH + tourneyLogoH;
     // console.log(homeScoreY)
@@ -53,7 +105,7 @@ function formatScreen () {
     teamImgAway.css('height', awayLogoW+'px');
     teamImgAway.css('top', tourneyLogoH+awayNameH+awayLogoW+'px');
     teamScoreAway.css('height', awayLogoW+'px');
-    teamScoreAway.css('line-height', awayLogoW+'px');
+    teamScoreAway.css('line-height', logoH+'px');
     // console.log(tourneyLogoH);
     var awayScoreY = awayNameH + tourneyLogoH;
     // console.log(awayScoreY)
@@ -65,15 +117,16 @@ function formatScreen () {
     // Timer
     timerW = parseInt(matchTimer.css('width'));
     // console.log(timerW);
-    matchTimer.css('height', 0.3*timerW+"px");
+    matchTimer.css('height', 0.28*timerW+"px");
     matchTimer.css('line-height', 0.32*timerW+"px");
     timerH = parseInt(matchTimer.css('height'));
+    timerB = parseInt(matchTimer.css('border-width'));
     matchTimer.css('font-size', 0.84*timerH+"px");
     timerFS = parseInt(matchTimer.css('font-size'));
-    matchPeriod.css('top', tourneyLogoH+timerH+'px');
-    matchPeriod.css('height', 0.65 * timerH + "px");
-    // matchPeriod.css('line-height', 0.40 * timerH + "px");
-    matchPeriod.css('font-size', 0.45 * timerH + "px");
+    // matchPeriod.css('top', tourneyLogoH+timerH+'px');
+    matchPeriod.css('height', timerH + 2*timerB + "px");
+    matchPeriod.css('line-height', 0.98*timerH + "px");
+    matchPeriod.css('font-size', timerFS);
     periodH = parseInt(matchPeriod.css('height'));
     periodBoxes = $( '.period-box' );
     periodBoxes.css('width', periodBoxes.css('height'));

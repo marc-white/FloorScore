@@ -356,7 +356,6 @@ function alterPeriod(inc) {
     }
 }
 
-
 // On-page-load events
 $( document ).ready(function () {
 

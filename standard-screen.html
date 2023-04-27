@@ -1,12 +1,15 @@
 <html>
 <head>
 <title>Rolling timer</title>
-<link rel='stylesheet' href='./css/display.css' />
+<link rel='stylesheet' href='./css/display-big.css' />
+<link rel='stylesheet' href='./css/jquery.rollingBorder.css' />
 <script src='./js/jquery-3.1.0.min.js'></script>
 <script src="./js/jquery-ui.min.js"></script>
 <script src='./js/display-setup.js'></script>
+<script src='./js/jquery.rollingBorder.js'></script>
 <script>
 var observer, observerPeriod, targetNode, targetNodePeriod, observerConfig;
+var scoreBorderSize = "5px";
 $( document ).ready(function () {
     // Initialise manually
     var currTime = window.opener.$('#match-timer').html();
@@ -44,15 +47,30 @@ $( document ).ready(function () {
         subtree: true
     };
     targetNode = window.opener.document.querySelector('#match-timer');
+    var rollingBorderTimer ;
     function updateTimer (mutations) {
         var t = window.opener.$('#match-timer');
         var currTime = t.html();
         var currBorder = t.css("borderLeftColor");
         // console.log(currTime)
         var timerDisp = $('#match-timer');
+        var oldBorder = timerDisp.css("borderLeftColor");
         timerDisp.html(currTime);
-        timerDisp.css('border', '2px solid ' + currBorder);
+        timerDisp.css('border', scoreBorderSize + ' solid ' + currBorder);
         $('#match-timer #timerColon').css('color', currBorder);
+        if (currBorder != oldBorder) {
+            if (rollingBorderTimer != null) {
+                rollingBorderTimer.destroy();
+            }
+            if (t.hasClass("clockGreen")) {
+                rollingBorderTimer = $('#match-timer').rollingBorder({
+                    padding: 0,
+                    color: "black",
+                    width: 7,
+                    length: "100%"
+                });
+            }
+        }
 
         formatScreen();
     }
@@ -61,6 +79,7 @@ $( document ).ready(function () {
     updateTimer();
     observer.observe(targetNode, observerConfig);
 
+    var rollingBorderPeriod;
     targetNodePeriod = window.opener.document.querySelector('#match-period');
     function updatePeriod (mutations) {
 
@@ -69,43 +88,48 @@ $( document ).ready(function () {
         let periodRelated = $("[class^=period-]");
         periodRelated.removeClass('period-box-active').removeClass('period-arrow-visible');
         periodRelated.finish();
-        periodRelated.css('background-color', '').css('opacity', '');
+        periodRelated.css('background-color', '').css('opacity', '').css('border-width', scoreBorderSize);
 
         // console.log('Updating current period...');
         let noPeriods = parseInt(window.opener.$("#match-timer-no-periods").val());
-        // console.log('No. periods at reset: ' + noPeriods);
+        console.log('No. periods at reset: ' + noPeriods);
         let currPer = window.opener.$('#match-period').html();
-        // console.log('Current period at reset: ' + currPer);
-        for (let i = 1; i <= noPeriods; i++) {
-            let box = $('#period-' + i);
-            box.removeClass().addClass('period-box');
-            let currPerInt = parseInt(currPer);
-            if (i < currPerInt) {
-                // Stop any animation on this box, if it exists
-                // console.log('Making box ' + i + ' complete');
-                box.addClass('period-box-complete');
-            } else if (currPerInt == i) {
-                if (currPer.includes('break')) {
-                    // Stop any current period box animations
-                    // console.log('Making box ' + i + ' next');
-                    box.addClass('period-box-next');
-                    // console.log('Looking for ' + '#period-arrow-' + (i-1) + '-' + i);
-                    let perArrowNow = $('#period-arrow-' + (i-1) + '-' + i);
-                    perArrowNow.addClass('period-arrow-visible');
-                    blinkActive('.period-arrow-visible');
-                } else {
-                    // Stop any current period arrow animations
-                    // console.log('Making box ' + i + ' active');
-                    box.addClass('period-box-active');
-                    blinkBackground('.period-box-active');
-                }
-            } else {
-                // Remove any background-color change from the box
-                box.css('background-color', '');
-                box.removeClass('period-box-active').removeClass('period-box-complete');
-                box.finish();
-            }
+        console.log('Current period at reset: ' + currPer);
+        let box = $('.period-box');
+        var perBoxRollingBorder ;
+        console.log("Period box:");
+        console.log(box);
+        box.removeClass().addClass('period-box');
+        box.html("");
+        $('.period-arrow').remove();
+        let currPerInt = parseInt(currPer);
+        // console.log("Current period is " + currPerInt + ", currPer is " + currPer);
+        if (rollingBorderPeriod != null) {
+            rollingBorderPeriod.destroy();
+            rollingBorderPeriod = null ;
         }
+        if (currPer.includes('break')) {
+                // Stop any current period box animations
+                console.log('Making box ' + currPer + ' next');
+                box.addClass('period-box-next');
+                box.html(currPerInt);
+                // console.log('Looking for ' + '#period-arrow-' + (i-1) + '-' + i);
+                box.prepend("<div class='period-arrow'>&#10095;</div>");
+                let perArrowNow = $('.period-arrow');
+                perArrowNow.addClass('period-arrow-visible');
+                blinkActive(".period-arrow-visible");
+            } else {
+                // Stop any current period arrow animations
+                box.html(currPerInt);
+                box.addClass('period-box-active');
+                rollingBorderPeriod = box.rollingBorder({
+                    padding: 0,
+                    color: "black",
+                    width: 7,
+                    length: "100%"
+                });
+            }
+
 
         formatScreen();
     }
@@ -119,27 +143,27 @@ $( document ).ready(function () {
     function updateNoPeriods () {
         // End any and all period-related animations, and then remove any styles
         // this might create
-        let periodRelated = $("[class^=period-]");
-        periodRelated.removeClass('period-box-active').removeClass('period-arrow-visible');
-        periodRelated.finish();
-        periodRelated.css('background-color', '').css('opacity', '');
-
-        matchPeriod = $('#match-period');
-        matchPeriod.html('');
-        noPeriods = window.opener.$('#match-timer-no-periods').val();
-        // console.log('noPeriods = ' + noPeriods);
-        for (let i = 1; i <= noPeriods; i++) {
-            matchPeriod.append("<div id='period-" + i + "' class='period-box'>" + i + "</div>");
-            if (i < noPeriods) {
-                matchPeriod.append("<div id='period-arrow-" + i + "-" + (i+1) + "' class='period-arrow'>&#10095;</div>")
-            }
-        }
-        let adverts = $('#advertising');
-        if (noPeriods > 5) {
-            adverts.css('visibility', 'hidden');
-        } else {
-            adverts.css('visibility', 'visible');
-        }
+        // let periodRelated = $("[class^=period-]");
+        // periodRelated.removeClass('period-box-active').removeClass('period-arrow-visible');
+        // periodRelated.finish();
+        // periodRelated.css('background-color', '').css('opacity', '');
+        //
+        // matchPeriod = $('#match-period');
+        // matchPeriod.html('');
+        // noPeriods = window.opener.$('#match-timer-no-periods').val();
+        // // console.log('noPeriods = ' + noPeriods);
+        // // for (let i = 1; i <= noPeriods; i++) {
+        // //     matchPeriod.append("<div id='period-" + i + "' class='period-box'>" + i + "</div>");
+        // //     if (i < noPeriods) {
+        // //         matchPeriod.append("<div id='period-arrow-" + i + "-" + (i+1) + "' class='period-arrow'>&#10095;</div>")
+        // //     }
+        // // }
+        // let adverts = $('#advertising');
+        // // if (noPeriods > 5) {
+        // //     adverts.css('visibility', 'hidden');
+        // // } else {
+        // //     adverts.css('visibility', 'visible');
+        // // }
         updateTimer();
         updatePeriod();
         formatScreen();
@@ -168,6 +192,7 @@ $( document ).ready(function () {
         homeScore.text( currHomeScore );
         // console.log(homeScore.attr('style'));
         homeImg.css('color', homeScore.css('color'));
+        awayScore.css("background-color", bgcol);
 
         var currAwayName = window.opener.$('#team-away option:selected').text();
         $('#team-name-away td').text(currAwayName);
@@ -179,10 +204,34 @@ $( document ).ready(function () {
         awayScore.text( currAwayScore );
         awayImg.css('color', awayScore.css('color'));
 
-        // Add a grey border if the team colour matches the screen background
-        // Otherwise, make sure the border is 0
+        // Add a border if the box bg colour matches the screen background
+
+        let homePrimaryColor = homeImg.css("background-color");
+        let homeSecondaryColor = homeScore.css("color");
+        let awayPrimaryColor = awayImg.css("background-color");
+        let awaySecondaryColor = awayScore.css("color");
+        console.log(awayPrimaryColor);
+        console.log(RGBStrToHSL(awayPrimaryColor));
+        console.log(awaySecondaryColor);
+        console.log(RGBStrToHSL(awaySecondaryColor));
+
+        let homeColors = [homePrimaryColor, homeSecondaryColor];
+        let awayColors = [awayPrimaryColor, awaySecondaryColor];
+
+        let homeColorsL = homeColors.map((rgb) => RGBStrToHSL(rgb)[2]);
+        let awayColorsL = awayColors.map((rgb) => RGBStrToHSL(rgb)[2]);
+        console.log(homeColorsL);
+        console.log(awayColorsL);
+        let homeColorLightest = homeColors[homeColorsL.indexOf(homeColorsL.max())];
+        let awayColorLightest = awayColors[awayColorsL.indexOf(awayColorsL.max())];
 
         var bgcol = $( 'body' ).css('background-color');
+        // Force the scores to have bgcol background, and text in the lighter of the two
+        // team colours
+        awayScore.css("background-color", bgcol);
+        // awayScore.css("color", "rgb(255,255,255)");
+        homeScore.css("background-color", bgcol);
+        // awayScore.css("color", "rgb(255,255,255)");
         [
             '#team-score-home',
             '#team-score-away',
@@ -191,15 +240,36 @@ $( document ).ready(function () {
         ].forEach(function (e) {
             var elem = $(e);
             if (elem.css('background-color') == bgcol) {
-                elem.css('border', '2px solid gray');
-                elem.css('border-color', elem.css('color'));
+                elem.css('border', scoreBorderSize + ' solid gray');
+                if ((e == "#team-score-home") || (e == "#team-img-home")) {
+                    if (homePrimaryColor != bgcol) {
+                        elem.css('border-color', homePrimaryColor);
+                    } else {
+                        elem.css('border-color', homeSecondaryColor);
+                    }
+                    if (e == "#team-score-home") {
+                        // Set score to display in lightest team colour
+                        elem.css("color", homeColorLightest);
+                    }
+                } else if ((e == "#team-score-away") || (e == "#team-img-away")) {
+                    if (awayPrimaryColor != bgcol) {
+                        elem.css('border-color', awayPrimaryColor);
+                    } else {
+                        elem.css('border-color', awaySecondaryColor);
+                    }
+                    if (e == "#team-score-away") {
+                        // Set score to display in lightest team colour
+                        elem.css("color", awayColorLightest);
+                    }
+                }
             } else {
-                elem.css('border', '0px solid none');
+                elem.css('border', scoreBorderSize + ' solid none');
+                elem.css('border-color', elem.css('background-color'));
             }
-            if (e.includes('img')) {
-                elem.css('border-bottom-width', '0');
+            if ((e == "#team-img-home") || (e == "#team-score-away")) {
+                elem.css('border-right-width', '0');
             } else {
-                elem.css('border-top-width', '0');
+                elem.css('border-left-width', '0');
             }
         })
 
@@ -234,7 +304,9 @@ $( document ).ready(function () {
 <!--<div class='bgimage' id='tourney-logo' style='background-image:url(./img/tourney/FACTBanner.png)'></div>-->
 
 <div id='match-timer'></div>
-<div id='match-period'>P</div>
+<div id='match-period' class="period-box">
+        1
+</div>
 <div id='advertising'>
     <table>
     <tr><td><img src='./img/bm_afa_act_logo_white_transparent_rgb.png' /></td>
