@@ -2,7 +2,7 @@
     "avengers":
         {
             "name":"Avengers",
-            "img":"./img/team-img/AvengersNB.png",
+            "img":"./img/team-img/AvengersNBCrop.png",
             "img-clr":"red",
             "bg-clr":"red",
             "tx-clr":"white"
@@ -10,7 +10,7 @@
     "asgardians":
         {
             "name":"Asgardians",
-            "img":"./img/team-img/AsgardiansNB.png",
+            "img":"./img/team-img/AsgardiansNBCrop.png",
             "img-clr":"yellow",
             "bg-clr":"yellow",
             "tx-clr":"black"
@@ -18,7 +18,7 @@
     "eternals":
         {
             "name":"Eternals",
-            "img":"./img/team-img/EternalsNB.png",
+            "img":"./img/team-img/EternalsNBCrop.png",
             "img-clr":"dodgerblue",
             "bg-clr":"dodgerblue",
             "tx-clr":"white"
@@ -26,7 +26,7 @@
     "ravagers":
         {
             "name":"Ravagers",
-            "img":"./img/team-img/RavagersNB.png",
+            "img":"./img/team-img/RavagersNBCrop.png",
             "img-clr":"Black",
             "bg-clr":"Black",
             "tx-clr":"white"
