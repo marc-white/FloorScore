@@ -9,7 +9,7 @@
         },
     "green":
         {
-            "name":"Green", 
+            "name":"Goblins",
             "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
             "img-clr":"forestgreen",
             "bg-clr":"forestgreen",
@@ -31,17 +31,17 @@
             "bg-clr":"cyan",
             "tx-clr":"black"
         },
-    "purple":
+    "aubergine-machine":
         {
-            "name":"Purple",
+            "name":"The Aubergine Machine",
             "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
             "img-clr":"purple",
             "bg-clr":"purple",
             "tx-clr":"white"
         },
-    "white":
+    "eagles":
         {
-            "name":"White",
+            "name":"Eagles",
             "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
             "img-clr":"white",
             "bg-clr":"white",
