@@ -73,7 +73,7 @@ function formatScreen () {
     var matchTimer = $('#match-timer');
     var matchPeriod = $('#match-period');
     var advertising = $('#advertising');
-    var scoreFontSizeFactor = 0.75;
+    var scoreFontSizeFactor = 0.53;
 
     teamNameHome.css('top', tourneyLogoH+'px');
     var homeLogoW = parseInt(teamImgHome.css('width'));
@@ -87,7 +87,7 @@ function formatScreen () {
     teamImgHome.css('height', homeLogoW+'px');
     teamImgHome.css('top', tourneyLogoH+homeNameH+homeLogoW+'px');
     teamScoreHome.css('height', homeLogoW+'px');
-    teamScoreHome.css('line-height', logoH+'px');
+    teamScoreHome.css('line-height', 0.88*logoH+'px');
     // console.log(tourneyLogoH);
     var homeScoreY = homeNameH + tourneyLogoH;
     // console.log(homeScoreY)
@@ -105,7 +105,7 @@ function formatScreen () {
     teamImgAway.css('height', awayLogoW+'px');
     teamImgAway.css('top', tourneyLogoH+awayNameH+awayLogoW+'px');
     teamScoreAway.css('height', awayLogoW+'px');
-    teamScoreAway.css('line-height', logoH+'px');
+    teamScoreAway.css('line-height', 0.88*logoH+'px');
     // console.log(tourneyLogoH);
     var awayScoreY = awayNameH + tourneyLogoH;
     // console.log(awayScoreY)
@@ -118,14 +118,14 @@ function formatScreen () {
     timerW = parseInt(matchTimer.css('width'));
     // console.log(timerW);
     matchTimer.css('height', 0.28*timerW+"px");
-    matchTimer.css('line-height', 0.32*timerW+"px");
+    matchTimer.css('line-height', 0.24*timerW+"px");
     timerH = parseInt(matchTimer.css('height'));
     timerB = parseInt(matchTimer.css('border-width'));
-    matchTimer.css('font-size', 0.84*timerH+"px");
+    matchTimer.css('font-size', 0.74*timerH+"px");
     timerFS = parseInt(matchTimer.css('font-size'));
     // matchPeriod.css('top', tourneyLogoH+timerH+'px');
     matchPeriod.css('height', timerH + 2*timerB + "px");
-    matchPeriod.css('line-height', 0.98*timerH + "px");
+    matchPeriod.css('line-height', 0.24*timerW+"px");
     matchPeriod.css('font-size', timerFS);
     periodH = parseInt(matchPeriod.css('height'));
     periodBoxes = $( '.period-box' );

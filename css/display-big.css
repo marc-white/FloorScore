@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "LED Screen";
+    src: url('led-screen-gtamblog-caps-20-font/LedScreenGtamblogCaps20Regular-vP07.ttf');
+}
+
 div, p, table, td {
     margin: 0;
     padding: 0;
@@ -39,7 +44,7 @@ html, body {
     width: 70vw;
     /*height: 40vh !important;*/
     line-height: 60vh;
-    font-family: "Lucida Console", monospace;
+    font-family: "LED Screen", "Lucida Console", monospace;
     font-size: 50vh;
     text-align: center;
     color: white;
@@ -57,7 +62,7 @@ html, body {
 
 #match-period {
     /*text-align: center;*/
-    font-family: "Calibri", serif;
+    font-family: "LED Screen", "Lucida Console", monospace;
     font-size: 60vh;
     width: 24vw;
     /*height: 20vh;*/
@@ -121,7 +126,7 @@ div.team-logo, div.team-score {
     width: 23.5vw;
     /*width: 100%;*/
     line-height: 56vh;
-    font-family: "Lucida Console", monospace;
+    font-family: "LED Screen", "Lucida Console", monospace;
     font-size: 121%;
     text-align: center;
     background: black;
@@ -265,4 +270,8 @@ div.team-score {
 
 .period-arrow-visible {
     color: white;
+}
+
+.rolling-border-box {
+    font-family: "LED Screen", "Lucida Console", monospace;
 }
