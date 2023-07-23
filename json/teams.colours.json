@@ -87,10 +87,10 @@
             "bg-clr":"Black",
             "tx-clr":"white"
         },
-    "ss23div1t4":
+    "pooh-bears":
     {
-        "name":"SS23 Div 1 Team 4",
-        "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+        "name":"Pooh Bears",
+        "img":"./img/team-img/Winniethepooh.png",
         "img-clr":"saddlebrown",
         "bg-clr":"saddlebrown",
         "tx-clr":"white"
