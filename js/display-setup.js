@@ -111,6 +111,7 @@ function formatScreen () {
     // console.log(awayScoreY)
     teamScoreAway.css("top", awayScoreY+'px');
     teamScoreAway.css("font-size", scoreFontSizeFactor*parseInt(awayLogoW)+'px');
+    var awayScoreFS = parseFloat(teamScoreAway.css("font-size"));
 
     // $('.team-logo').css('font-size', 0.8*homeLogoW+"px");
 
@@ -126,7 +127,7 @@ function formatScreen () {
     // matchPeriod.css('top', tourneyLogoH+timerH+'px');
     matchPeriod.css('height', timerH + 2*timerB + "px");
     matchPeriod.css('line-height', 0.24*timerW+"px");
-    matchPeriod.css('font-size', timerFS);
+    matchPeriod.css('font-size', awayScoreFS);
     periodH = parseInt(matchPeriod.css('height'));
     periodBoxes = $( '.period-box' );
     periodBoxes.css('width', periodBoxes.css('height'));
