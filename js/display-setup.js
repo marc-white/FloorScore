@@ -84,7 +84,7 @@ function formatScreen () {
 //    $('#team-name-home').css('line-height', 0.40*homeNameH+'px');
     teamNameHome.css('font-size', '38px');
     teamNameHome.css('line-height', '40px');
-    teamImgHome.css('height', homeLogoW+'px');
+    teamImgHome.css('height', 1.6*homeLogoW+'px');
     teamImgHome.css('top', tourneyLogoH+homeNameH+homeLogoW+'px');
     teamScoreHome.css('height', homeLogoW+'px');
     teamScoreHome.css('line-height', 0.88*logoH+'px');
@@ -102,7 +102,7 @@ function formatScreen () {
 //    $('#team-name-away').css('line-height', 0.40*awayNameH+'px');
     teamNameAway.css('font-size', '38px');
     teamNameAway.css('line-height', '40px');
-    teamImgAway.css('height', awayLogoW+'px');
+    teamImgAway.css('height', 1.6*awayLogoW+'px');
     teamImgAway.css('top', tourneyLogoH+awayNameH+awayLogoW+'px');
     teamScoreAway.css('height', awayLogoW+'px');
     teamScoreAway.css('line-height', 0.88*logoH+'px');
