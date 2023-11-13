@@ -15,10 +15,10 @@
             "bg-clr":"forestgreen",
             "tx-clr":"white"
         },
-    "pink":
+    "barneys":
         {
-            "name":"Pink",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
+            "name":"Barneys",
+            "img":"./img/team-img/Barney_the_Dinosaur.png",
             "img-clr":"hotpink",
             "bg-clr":"hotpink",
             "tx-clr":"black"
@@ -31,22 +31,30 @@
             "bg-clr":"cyan",
             "tx-clr":"black"
         },
-    "purple":
+    "aubergine-machine":
         {
-            "name":"Purple",
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "name":"The Aubergine Machine",
+            "img":"./img/team-img/Eggplant-emoji-emotions-1024x788.png",
             "img-clr":"purple",
             "bg-clr":"purple",
             "tx-clr":"white"
         },
-    "white":
+    "eagles":
         {
-            "name":"White",
+            "name":"Eagles",
             "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
             "img-clr":"white",
             "bg-clr":"white",
             "tx-clr":"black"
         },
+    "schoon-squad":
+    {
+        "name":"Schoon Squad",
+        "img":"./img/team-img/SchooneyTunesFinal.png",
+        "img-clr":"white",
+        "bg-clr":"white",
+        "tx-clr":"red"
+    },
     "yellow":
         {
             "name":"Yellow",
@@ -55,10 +63,10 @@
             "bg-clr":"yellow",
             "tx-clr":"black"
         },
-    "orange":
+    "lemon-sherbet":
         {
-            "name":"Orange",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
+            "name":"Lemon Sherbet",
+            "img":"./img/team-img/LemonSherbetTrans.png",
             "img-clr":"orange",
             "bg-clr":"orange",
             "tx-clr":"black"
@@ -79,14 +87,22 @@
             "bg-clr":"dodgerblue",
             "tx-clr":"white"
         },
-    "black":
+    "test-eagles":
         {
-            "name":"Black",
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "name":"Test Eagles",
+            "img":"./img/team-img/TestEagles.png",
             "img-clr":"Black",
             "bg-clr":"Black",
-            "tx-clr":"white"
+            "tx-clr":"#c1a675"
         },
+    "kambah-krusaders":
+    {
+        "name":"Kambah Krusaders",
+        "img":"./img/team-img/CruasderBlack.png",
+        "img-clr":"Black",
+        "bg-clr":"Black",
+        "tx-clr":"white"
+    },
     "brown":
     {
         "name":"Brown",
