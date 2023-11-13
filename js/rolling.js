@@ -57,7 +57,7 @@ function resetGame( trigger_restart ) {
             // }
             $('#match-timer').html(formatTime(this.lap()));
             if ((!isPlay) && (this.lap() < 30*1000) && (this.lap() > 29*1000) && (!warningGiven)) {
-                lowLag.play('warningThirty');
+                warningThiry.play();
                 warningGiven = true;
             }
             if (this.go) {
@@ -74,7 +74,7 @@ function resetGame( trigger_restart ) {
 //        },
         complete: function (playSound = true) {
             // console.log('Inside onComplete');
-            if (playSound) { lowLag.play('buzzer'); }
+            if (playSound) { buzzer.play(); }
 //            setTimeout(function () {console.log('Game done'); }, 1000);
             if (period >= noPeriods && isPlay) {
                 isPlay = false;
@@ -340,12 +340,31 @@ function alterPeriod(inc) {
 // On-page-load events
 $( document ).ready(function () {
 
-    if ( $( 'div#lowLag ').length == 0 ) {
-        console.log('Initializing lowLag...');
-        lowLag.init({sm2url: './js/sm2/swf/', urlPrefix: './mp3/'});
-        lowLag.load(['47434BUZZER.mp3', '47434BUZZER.ogg', '47434BUZZER.wav'], 'buzzer');
-        lowLag.load(['thirty.mp3', 'thirty.ogg', 'thirty.wav'], 'warningThirty');
-    }
+    console.log('Initializing howler...');
+    Howler.html5PoolSize = 1000 ;
+    buzzer = new Howl({
+        src: ['mp3/47434BUZZER.mp3', 'mp3/47434BUZZER.ogg', 'mp3/47434BUZZER.wav'],
+        xhr: {
+            method: 'GET',
+            headers: {
+                "Access-Control-Allow-Origin": "*",
+            },
+        },
+        preload: true,
+        autoplay: false,
+    });
+    warningThirty = new Howl({
+        src: ['mp3/thirty.mp3', 'mp3/thirty.ogg', 'mp3/thirty.wav'],
+        preload: true,
+        autoplay: false,
+    });
+
+    // if ( $( 'div#lowLag ').length == 0 ) {
+    //     console.log('Initializing lowLag...');
+    //     lowLag.init({sm2url: './js/sm2/swf/', urlPrefix: './mp3/'});
+    //     lowLag.load(['47434BUZZER.mp3', '47434BUZZER.ogg', '47434BUZZER.wav'], 'buzzer');
+    //     lowLag.load(['thirty.mp3', 'thirty.ogg', 'thirty.wav'], 'warningThirty');
+    // }
 
     clockToggleH = parseInt($('#clock-toggle').css('height'));
     $('#clock-toggle').css('height', 2*clockToggleH + 'px');
