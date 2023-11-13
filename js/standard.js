@@ -24,10 +24,10 @@ var scoreHome, scoreAway;
 
 // Set global default values
 noPeriods = 3;
-lenPeriod = 20;
-lenBreak = 10;
-rollClockIntoPeriod = false;
-rollClockIntoBreak = false;
+lenPeriod = 15;
+lenBreak = 2;
+rollClockIntoPeriod = true;
+rollClockIntoBreak = true;
 
 function resetGame() {
     // Do stuff here
@@ -37,7 +37,7 @@ function resetGame() {
     // the period length and the length of the period break
     noPeriods = parseInt($('#match-timer-no-periods').val()); // mins
     lenPeriod = parseInt($('#match-timer-len-period').val()); // mins
-    lenBreak = parseInt($('#match-timer-len-break').val());; // mins
+    lenBreak = parseInt($('#match-timer-len-break').val()); // mins
     rollClockIntoPeriod = $('#match-timer-roll-into-period').prop('checked');
     rollClockIntoBreak = $('#match-timer-roll-into-break').prop('checked');
     gameStarted = false;
