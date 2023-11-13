@@ -49,7 +49,7 @@ opposed to trying to use internal JavaScript timers).
 
 ### Sounds
 
-Sounds are played using [lowLag.js](https://github.com/kirkjerk/lowLagAudio). This prevents the 
+Sounds are played using [howler.js](https://howlerjs.com/). This prevents the 
 large delays involved in playing sounds in vanilla JavaScript/HTML5 (otherwise, the buzzer would
 sound up to several seconds after the clock hit 0:00).
 
