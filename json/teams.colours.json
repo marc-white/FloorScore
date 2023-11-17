@@ -1,16 +1,16 @@
 {
-    "red":
+    "3g":
         {
-            "name":"Red", 
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "name":"3G",
+            "img":"./img/team-img/3GTrans.png",
             "img-clr":"red",
             "bg-clr":"red",
             "tx-clr":"white"
         },
-    "green":
+    "cult":
         {
-            "name":"Green", 
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "name":"The Cult",
+            "img":"./img/team-img/Cult.png",
             "img-clr":"forestgreen",
             "bg-clr":"forestgreen",
             "tx-clr":"white"
@@ -34,7 +34,7 @@
     "aubergine-machine":
         {
             "name":"The Aubergine Machine",
-            "img":"./img/team-img/Eggplant-emoji-emotions-1024x788.png",
+            "img":"./img/team-img/AubergineMachine.png",
             "img-clr":"purple",
             "bg-clr":"purple",
             "tx-clr":"white"
@@ -42,7 +42,7 @@
     "eagles":
         {
             "name":"Eagles",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
+            "img":"./img/team-img/eagles.png",
             "img-clr":"white",
             "bg-clr":"white",
             "tx-clr":"black"
@@ -50,15 +50,15 @@
     "schoon-squad":
     {
         "name":"Schoon Squad",
-        "img":"./img/team-img/SchooneyTunesFinal.png",
-        "img-clr":"white",
-        "bg-clr":"white",
-        "tx-clr":"red"
+        "img":"./img/team-img/schoonsquad.png",
+        "img-clr":"black",
+        "bg-clr":"black",
+        "tx-clr":"rgb(78,1,93)"
     },
-    "yellow":
+    "lightning":
         {
-            "name":"Yellow",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
+            "name":"Lightning",
+            "img":"./img/team-img/lightning.png",
             "img-clr":"yellow",
             "bg-clr":"yellow",
             "tx-clr":"black"
@@ -98,7 +98,7 @@
     "kambah-krusaders":
     {
         "name":"Kambah Krusaders",
-        "img":"./img/team-img/CruasderBlack.png",
+        "img":"./img/team-img/krusaders.png",
         "img-clr":"Black",
         "bg-clr":"Black",
         "tx-clr":"white"
