@@ -19,17 +19,17 @@
         {
             "name":"Barneys",
             "img":"./img/team-img/Barney_the_Dinosaur.png",
-            "img-clr":"hotpink",
-            "bg-clr":"hotpink",
-            "tx-clr":"black"
+            "img-clr":"purple",
+            "bg-clr":"purple",
+            "tx-clr":"white"
         },
     "aubergine-machine":
         {
             "name":"The Aubergine Machine",
             "img":"./img/team-img/AubergineMachine.png",
-            "img-clr":"purple",
-            "bg-clr":"purple",
-            "tx-clr":"white"
+            "img-clr":"hotpink",
+            "bg-clr":"hotpink",
+            "tx-clr":"black"
         },
     "eagles":
         {
