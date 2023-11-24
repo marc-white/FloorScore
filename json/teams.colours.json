@@ -23,14 +23,6 @@
             "bg-clr":"hotpink",
             "tx-clr":"black"
         },
-    "cyan":
-        {
-            "name":"Cyan",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
-            "img-clr":"cyan",
-            "bg-clr":"cyan",
-            "tx-clr":"black"
-        },
     "aubergine-machine":
         {
             "name":"The Aubergine Machine",
@@ -43,18 +35,26 @@
         {
             "name":"Eagles",
             "img":"./img/team-img/eagles.png",
+            "img-clr":"dodgerblue",
+            "bg-clr":"dodgerblue",
+            "tx-clr":"white"
+        },
+    "schoon-squad-black":
+        {
+            "name":"Schoon Squad (Black)",
+            "img":"./img/team-img/schoonsquad.png",
+            "img-clr":"black",
+            "bg-clr":"black",
+            "tx-clr":"rgb(213,1,229)"
+        },
+    "schoon-squad-white":
+        {
+            "name":"Schoon Squad (White)",
+            "img":"./img/team-img/schoonsquad.png",
             "img-clr":"white",
             "bg-clr":"white",
-            "tx-clr":"black"
+            "tx-clr":"rgb(213,1,229)"
         },
-    "schoon-squad":
-    {
-        "name":"Schoon Squad",
-        "img":"./img/team-img/schoonsquad.png",
-        "img-clr":"black",
-        "bg-clr":"black",
-        "tx-clr":"rgb(78,1,93)"
-    },
     "lightning":
         {
             "name":"Lightning",
@@ -71,22 +71,6 @@
             "bg-clr":"orange",
             "tx-clr":"black"
         },
-    "navy":
-        {
-            "name":"Navy",
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
-            "img-clr":"navy",
-            "bg-clr":"navy",
-            "tx-clr":"white"
-        },
-    "blue":
-        {
-            "name":"Blue",
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
-            "img-clr":"dodgerblue",
-            "bg-clr":"dodgerblue",
-            "tx-clr":"white"
-        },
     "test-eagles":
         {
             "name":"Test Eagles",
@@ -101,14 +85,6 @@
         "img":"./img/team-img/krusaders.png",
         "img-clr":"Black",
         "bg-clr":"Black",
-        "tx-clr":"white"
-    },
-    "brown":
-    {
-        "name":"Brown",
-        "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
-        "img-clr":"saddlebrown",
-        "bg-clr":"saddlebrown",
         "tx-clr":"white"
     }
 }
