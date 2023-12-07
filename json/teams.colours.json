@@ -11,8 +11,8 @@
         {
             "name":"The Cult",
             "img":"./img/team-img/Cult.png",
-            "img-clr":"forestgreen",
-            "bg-clr":"forestgreen",
+            "img-clr":"maroon",
+            "bg-clr":"maroon",
             "tx-clr":"white"
         },
     "barneys":
