@@ -23,13 +23,14 @@
     <span id="match-timer">00:00:00</span><br />
     Period: <span id="match-period">Waiting for start</span><br />
     <form id="match-timer-form">
+        <button type='button' onclick='startGame();toggleClock(MatchClockTock);' id='clock-toggle' style="width: 90%; margin: 5%">Resume/Pause Time<br />
+            <small style="background-color:yellow">(Spacebar)</small></button>
         <ul>
             <li><a href="#mtf-controls">Time controls</a></li>
             <li><a href="#mtf-altertime">Alter game times</a></li>
         </ul>
     <table id="mtf-controls">
     <tr><td colspan=4>
-        <button type='button' onclick='startGame();toggleClock(MatchClockTock);' id='clock-toggle' style="width: 100%;">Resume/Pause Time<br /><small style="background-color:yellow">(Spacebar)</small></button></td>
         <!-- <input type='button' value='Stop/Reset' onclick='MatchClock.resetCountdown();' /><br /> -->
         <!-- <input type='text' name='startTime' value='900' style='width:30px;' /><br /> -->
     <tr><td><input type='button' value='+1 min' onclick='MatchClockTock.alterTime(60.)' /></td>
