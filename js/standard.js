@@ -505,7 +505,7 @@ $( document ).ready(function () {
 
     // Bind a 'blur' command to the click events of buttons and checkboxes, and the
     // select event of drop-downs, to prevent spacebar press doing duplicate things
-    $('button, input:checkbox').click(function () {
+    $('button, input:checkbox, input:button').click(function () {
         $( this ).blur();
     })
     $('select').change(function () {
