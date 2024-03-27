@@ -511,6 +511,10 @@ $( document ).ready(function () {
         $( this ).blur();
     })
 
+    // Activate tabs for timer control
+    $( function () {
+        $("#match-timer-form").tabs();
+    })
 
     // Should now be ready - reset game to start!
     resetGame();
