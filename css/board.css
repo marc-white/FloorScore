@@ -47,12 +47,23 @@ div {
     float: left;
 }
 
-input[type='button'], button, select, select option {
+input[type='button'], button[type='button'], button, select, select option {
     font-size: 20pt;
 }
 
 #timer-attributes td input[type='button'] {
     width: 100%;
+}
+
+#timer-attributes, .ui-tabs, .ui-tabs-panel, .ui-widget-header  {
+    background: pink;
+    border: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.ui-widget.ui-widget-content {
+    border: 0;
 }
 
 .clockGreen {

@@ -5,22 +5,29 @@
 <!--<script src="./js/sm2/js/soundmanager2.js"></script>-->
 <script src="./js/howler/howler.js"></script>
 <script src='./js/jquery-3.1.0.min.js'></script>
+<script src="./js/jquery-ui.min.js"></script>
 <script src='./js/tock.min.js'></script>
 <script src='./js/standard.js'></script>
 <!--<script src='./js/jquery.timer.js'></script>-->
 
+<link rel='stylesheet' href='./css/jquery-ui.css' />
 <link rel='stylesheet' href='./css/board.css' />
+
 </head>
 
 <body>
 
 <!-- Let's do the timer things -->
-<div class='half' id='timer-attributes' style='background:pink;'>
+<div class='half' id='timer-attributes'>
 <h2>Display clock</h2>
     <span id="match-timer">00:00:00</span><br />
     Period: <span id="match-period">Waiting for start</span><br />
     <form id="match-timer-form">
-    <table>
+        <ul>
+            <li><a href="#mtf-controls">Time controls</a></li>
+            <li><a href="#mtf-altertime">Alter game times</a></li>
+        </ul>
+    <table id="mtf-controls">
     <tr><td colspan=4>
         <button type='button' onclick='startGame();toggleClock(MatchClockTock);' id='clock-toggle' style="width: 100%;">Resume/Pause Time<br /><small style="background-color:yellow">(Spacebar)</small></button></td>
         <!-- <input type='button' value='Stop/Reset' onclick='MatchClock.resetCountdown();' /><br /> -->
@@ -34,15 +41,20 @@
         <td><input type='button' value='-1 sec' onclick='MatchClockTock.alterTime(-1.)' /></td>
         <td><input type='button' value='-0.1 sec' onclick='MatchClockTock.alterTime(-0.1)' /></td></tr>
         <tr><td colspan="2"><button type='button' onclick='alterPeriod(-1)' >&larr; Prev. time block</button></td>
-            <td colspan="2"><button type='button' onclick='alterPeriod(1)' >Next time block &rarr;</button></td>
+            <td colspan="2" style="text-align: right;"><button type='button' onclick='alterPeriod(1)'>Next time block &rarr;</button></td>
         </tr>
-    <tr><td colspan=3><input type='button' value='End game/reset system' onclick='resetGameManual(MatchClockTock)' /></td></tr>
+    <tr><td>&nbsp;</td>
+        <td colspan=2><input type='button' value='End game/reset system' onclick='resetGameManual(MatchClockTock)' /></td>
+        <td>&nbsp;</td>
+    </tr>
     </table>
+        <div id="mtf-altertime">
         Number of periods in the game: <select id='match-timer-no-periods'></select><br />
         Length of each period: <select id='match-timer-len-period'></select> minutes<br />
         Length of each period break: <select id='match-timer-len-break'></select> minutes<br />
         Auto-roll the clock into new periods?   <input type='checkbox' id='match-timer-roll-into-period' style="transform: scale(2,2)" checked /><br />
         Auto-roll the clock into period breaks? <input type='checkbox' id='match-timer-roll-into-break'  style="transform: scale(2,2)" checked /><br />
+        </div>
     </form>
 </div>
 
