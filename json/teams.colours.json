@@ -7,21 +7,21 @@
             "bg-clr":"red",
             "tx-clr":"white"
         },
-    "cult":
+    "team1b":
         {
-            "name":"The Cult",
-            "img":"./img/team-img/Cult.png",
-            "img-clr":"maroon",
-            "bg-clr":"maroon",
+            "name":"WS2024 Team 1B",
+            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "img-clr":"teal",
+            "bg-clr":"teal",
             "tx-clr":"white"
         },
-    "barneys":
+    "team1c":
         {
-            "name":"Barneys",
-            "img":"./img/team-img/Barney_the_Dinosaur.png",
-            "img-clr":"purple",
-            "bg-clr":"purple",
-            "tx-clr":"white"
+            "name":"WS2024 Team 1C",
+            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
+            "img-clr":"cyan",
+            "bg-clr":"cyan",
+            "tx-clr":"black"
         },
     "aubergine-machine":
         {
@@ -70,14 +70,6 @@
             "img-clr":"orange",
             "bg-clr":"orange",
             "tx-clr":"black"
-        },
-    "test-eagles":
-        {
-            "name":"Test Eagles",
-            "img":"./img/team-img/TestEagles.png",
-            "img-clr":"Black",
-            "bg-clr":"Black",
-            "tx-clr":"#c1a675"
         },
     "kambah-krusaders":
     {
