@@ -7,21 +7,21 @@
             "bg-clr":"red",
             "tx-clr":"white"
         },
-    "team1b":
+    "pink":
         {
-            "name":"WS2024 Team 1B",
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
-            "img-clr":"teal",
-            "bg-clr":"teal",
+            "name":"P!nk",
+            "img":"./img/team-img/pink.jpg",
+            "img-clr":"deeppink",
+            "bg-clr":"deeppink",
             "tx-clr":"white"
         },
     "team1c":
         {
             "name":"WS2024 Team 1C",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
-            "img-clr":"cyan",
-            "bg-clr":"cyan",
-            "tx-clr":"black"
+            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "img-clr":"chocolate",
+            "bg-clr":"chocolate",
+            "tx-clr":"white"
         },
     "aubergine-machine":
         {
@@ -58,7 +58,7 @@
     "slow-burn":
         {
             "name":"Slow Burn",
-            "img":"./img/team-img/lightning.png",
+            "img":"./img/team-img/494500.png",
             "img-clr":"yellow",
             "bg-clr":"yellow",
             "tx-clr":"black"
