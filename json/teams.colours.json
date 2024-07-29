@@ -55,9 +55,9 @@
             "bg-clr":"white",
             "tx-clr":"rgb(213,1,229)"
         },
-    "lightning":
+    "slow-burn":
         {
-            "name":"Lightning",
+            "name":"Slow Burn",
             "img":"./img/team-img/lightning.png",
             "img-clr":"yellow",
             "bg-clr":"yellow",
