@@ -15,10 +15,10 @@
             "bg-clr":"deeppink",
             "tx-clr":"white"
         },
-    "team1c":
+    "skids":
         {
-            "name":"WS2024 Team 1C",
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "name":"Skids",
+            "img":"./img/team-img/what-does-the-car-with-skid-marks-light-mean-696x431.webp",
             "img-clr":"chocolate",
             "bg-clr":"chocolate",
             "tx-clr":"white"
