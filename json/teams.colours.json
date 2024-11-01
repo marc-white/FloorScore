@@ -1,18 +1,10 @@
 {
-    "3g":
+    "skids":
         {
-            "name":"3G",
-            "img":"./img/team-img/3GTrans.png",
-            "img-clr":"red",
-            "bg-clr":"red",
-            "tx-clr":"white"
-        },
-    "cult":
-        {
-            "name":"The Cult",
-            "img":"./img/team-img/Cult.png",
-            "img-clr":"maroon",
-            "bg-clr":"maroon",
+            "name":"Skids",
+            "img":"./img/team-img/what-does-the-car-with-skid-marks-light-mean-696x431.webp",
+            "img-clr":"chocolate",
+            "bg-clr":"chocolate",
             "tx-clr":"white"
         },
     "barneys":
@@ -85,6 +77,102 @@
         "img":"./img/team-img/krusaders.png",
         "img-clr":"Black",
         "bg-clr":"Black",
+        "tx-clr":"white"
+    },
+    "red":
+        {
+            "name":"Red", 
+            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "img-clr":"red",
+            "bg-clr":"red",
+            "tx-clr":"white"
+        },
+    "green":
+        {
+            "name":"Green", 
+            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "img-clr":"forestgreen",
+            "bg-clr":"forestgreen",
+            "tx-clr":"white"
+        },
+    "pink":
+        {
+            "name":"Pink",
+            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
+            "img-clr":"hotpink",
+            "bg-clr":"hotpink",
+            "tx-clr":"black"
+        },
+    "cyan":
+        {
+            "name":"Cyan",
+            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
+            "img-clr":"cyan",
+            "bg-clr":"cyan",
+            "tx-clr":"black"
+        },
+    "purple":
+        {
+            "name":"Purple",
+            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "img-clr":"purple",
+            "bg-clr":"purple",
+            "tx-clr":"white"
+        },
+    "white":
+        {
+            "name":"White",
+            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
+            "img-clr":"white",
+            "bg-clr":"white",
+            "tx-clr":"black"
+        },
+    "yellow":
+        {
+            "name":"Yellow",
+            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
+            "img-clr":"yellow",
+            "bg-clr":"yellow",
+            "tx-clr":"black"
+        },
+    "orange":
+        {
+            "name":"Orange",
+            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
+            "img-clr":"orange",
+            "bg-clr":"orange",
+            "tx-clr":"black"
+        },
+    "navy":
+        {
+            "name":"Navy",
+            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "img-clr":"navy",
+            "bg-clr":"navy",
+            "tx-clr":"white"
+        },
+    "blue":
+        {
+            "name":"Blue",
+            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "img-clr":"dodgerblue",
+            "bg-clr":"dodgerblue",
+            "tx-clr":"white"
+        },
+    "black":
+        {
+            "name":"Black",
+            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "img-clr":"Black",
+            "bg-clr":"Black",
+            "tx-clr":"white"
+        },
+    "brown":
+    {
+        "name":"Brown",
+        "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+        "img-clr":"saddlebrown",
+        "bg-clr":"saddlebrown",
         "tx-clr":"white"
     }
 }
