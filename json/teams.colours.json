@@ -3,8 +3,8 @@
         {
             "name":"Skids",
             "img":"./img/team-img/what-does-the-car-with-skid-marks-light-mean-696x431.webp",
-            "img-clr":"chocolate",
-            "bg-clr":"chocolate",
+            "img-clr":"maroon",
+            "bg-clr":"maroon",
             "tx-clr":"white"
         },
     "barneys":
@@ -15,20 +15,20 @@
             "bg-clr":"purple",
             "tx-clr":"white"
         },
-    "aubergine-machine":
-        {
-            "name":"The Aubergine Machine",
-            "img":"./img/team-img/AubergineMachine.png",
-            "img-clr":"hotpink",
-            "bg-clr":"hotpink",
-            "tx-clr":"black"
-        },
     "eagles":
         {
             "name":"Eagles",
             "img":"./img/team-img/eagles.png",
-            "img-clr":"dodgerblue",
-            "bg-clr":"dodgerblue",
+            "img-clr":"white",
+            "bg-clr":"white",
+            "tx-clr":"dodgerblue"
+        },
+    "shark-bait":
+        {
+            "name":"Shark Bait",
+            "img":"./img/team-img/gaming-logo-template-featuring-a-white-shark-graphic-2975a.png",
+            "img-clr":"hotpink",
+            "bg-clr":"hotpink",
             "tx-clr":"white"
         },
     "schoon-squad-black":
@@ -75,8 +75,8 @@
     {
         "name":"Kambah Krusaders",
         "img":"./img/team-img/krusaders.png",
-        "img-clr":"Black",
-        "bg-clr":"Black",
+        "img-clr":"forestgreen",
+        "bg-clr":"forestgreen",
         "tx-clr":"white"
     },
     "red":
