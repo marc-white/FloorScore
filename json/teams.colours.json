@@ -23,14 +23,6 @@
             "bg-clr":"hotpink",
             "tx-clr":"black"
         },
-    "cyan":
-        {
-            "name":"Cyan",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
-            "img-clr":"cyan",
-            "bg-clr":"cyan",
-            "tx-clr":"black"
-        },
     "purple":
         {
             "name":"Purple",
@@ -38,14 +30,6 @@
             "img-clr":"purple",
             "bg-clr":"purple",
             "tx-clr":"white"
-        },
-    "white":
-        {
-            "name":"White",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
-            "img-clr":"white",
-            "bg-clr":"white",
-            "tx-clr":"black"
         },
     "yellow":
         {
@@ -55,13 +39,13 @@
             "bg-clr":"yellow",
             "tx-clr":"black"
         },
-    "orange":
+    "maroon":
         {
-            "name":"Orange",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
-            "img-clr":"orange",
-            "bg-clr":"orange",
-            "tx-clr":"black"
+            "name":"Maroon",
+            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "img-clr":"maroon",
+            "bg-clr":"maroon",
+            "tx-clr":"white"
         },
     "navy":
         {
@@ -71,14 +55,6 @@
             "bg-clr":"navy",
             "tx-clr":"white"
         },
-    "blue":
-        {
-            "name":"Blue",
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
-            "img-clr":"dodgerblue",
-            "bg-clr":"dodgerblue",
-            "tx-clr":"white"
-        },
     "black":
         {
             "name":"Black",
@@ -86,13 +62,5 @@
             "img-clr":"Black",
             "bg-clr":"Black",
             "tx-clr":"white"
-        },
-    "brown":
-    {
-        "name":"Brown",
-        "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
-        "img-clr":"saddlebrown",
-        "bg-clr":"saddlebrown",
-        "tx-clr":"white"
-    }
+        }
 }
