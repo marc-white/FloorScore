@@ -25,7 +25,7 @@ var scoreHome, scoreAway;
 // Set global default values
 noPeriods = 3;
 lenPeriod = 15;
-lenBreak = 2;
+lenBreak = 3;
 rollClockIntoPeriod = true;
 rollClockIntoBreak = true;
 
