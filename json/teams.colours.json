@@ -7,17 +7,17 @@
             "bg-clr":"red",
             "tx-clr":"white"
         },
-    "green":
+    "theog":
         {
-            "name":"Green", 
+            "name":"The OG", 
             "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
             "img-clr":"forestgreen",
             "bg-clr":"forestgreen",
             "tx-clr":"white"
         },
-    "pink":
+    "finalarc":
         {
-            "name":"Pink",
+            "name":"The Final Arc",
             "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
             "img-clr":"hotpink",
             "bg-clr":"hotpink",
@@ -31,10 +31,10 @@
             "bg-clr":"cyan",
             "tx-clr":"black"
         },
-    "purple":
+    "barneys":
         {
-            "name":"Purple",
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "name":"Barneys",
+            "img":"./img/team-img/Barney_the_Dinosaur.png",
             "img-clr":"purple",
             "bg-clr":"purple",
             "tx-clr":"white"
@@ -55,12 +55,12 @@
             "bg-clr":"yellow",
             "tx-clr":"black"
         },
-    "orange":
+    "mightyducks":
         {
-            "name":"Orange",
-            "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
-            "img-clr":"orange",
-            "bg-clr":"orange",
+            "name":"Mighty Ducks",
+            "img":"./img/team-img/MightyDucks.jpg",
+            "img-clr":"rgb(243,115,6)",
+            "bg-clr":"rgb(243,115,6)",
             "tx-clr":"black"
         },
     "navy":
@@ -71,28 +71,36 @@
             "bg-clr":"navy",
             "tx-clr":"white"
         },
-    "blue":
+    "sixthsense":
         {
-            "name":"Blue",
+            "name":"Sixth Sense",
             "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
             "img-clr":"dodgerblue",
             "bg-clr":"dodgerblue",
             "tx-clr":"white"
         },
-    "black":
+    "kambah-krusaders":
         {
-            "name":"Black",
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
-            "img-clr":"Black",
-            "bg-clr":"Black",
+            "name":"Kambah Krusaders",
+            "img":"./img/team-img/krusaders.png",
+            "img-clr":"black",
+            "bg-clr":"black",
             "tx-clr":"white"
         },
+    "test-eagles":
+        {
+            "name":"Test Eagles",
+            "img":"./img/team-img/TestEagles.png",
+            "img-clr":"Black",
+            "bg-clr":"Black",
+            "tx-clr":"#c1a675"
+        },
     "brown":
-    {
-        "name":"Brown",
-        "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
-        "img-clr":"saddlebrown",
-        "bg-clr":"saddlebrown",
-        "tx-clr":"white"
-    }
+        {
+            "name":"Brown",
+            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
+            "img-clr":"saddlebrown",
+            "bg-clr":"saddlebrown",
+            "tx-clr":"white"
+        }
 }
