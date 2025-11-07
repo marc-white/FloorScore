@@ -24,10 +24,10 @@ var scoreHome, scoreAway;
 
 // Set global default values
 noPeriods = 3;
-lenPeriod = 20;
-lenBreak = 10;
+lenPeriod = 15;
+lenBreak = 2;
 rollClockIntoPeriod = false;
-rollClockIntoBreak = false;
+rollClockIntoBreak = true;
 
 function resetGame() {
     // Do stuff here
