@@ -1,10 +1,10 @@
 {
-    "red":
+    "fireflies":
         {
-            "name":"Red", 
-            "img":"./img/team-img/bm_afa_act_logo_white_transparent_rgb.png",
-            "img-clr":"red",
-            "bg-clr":"red",
+            "name":"Fireflies", 
+            "img":"./img/team-img/Firefly.png",
+            "img-clr":"rgb(96,0,0)",
+            "bg-clr":"rgb(96,0,0)",
             "tx-clr":"white"
         },
     "theog":
