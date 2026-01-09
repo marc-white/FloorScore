@@ -47,9 +47,9 @@
             "bg-clr":"white",
             "tx-clr":"black"
         },
-    "yellow":
+    "team2c":
         {
-            "name":"Yellow",
+            "name":"Team 2C",
             "img":"./img/team-img/bm_afa_act_logo_black_transparent_rgb.png",
             "img-clr":"yellow",
             "bg-clr":"yellow",
