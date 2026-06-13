@@ -1,9 +1,12 @@
 <html>
 <head>
 <title>Rolling timer</title>
-<link rel='stylesheet' href='./css/display.css' />
+<link rel='stylesheet' href='./css/display-big.css' />
+<link rel='stylesheet' href='./css/jquery.rollingBorder.css' />
 <script src='./js/jquery-3.1.0.min.js'></script>
+<script src="./js/jquery-ui.min.js"></script>
 <script src='./js/display-setup.js'></script>
+<script src='./js/jquery.rollingBorder.js'></script>
 <script>
 var observer, targetNode, observerConfig;
 $( document ).ready(function () {
@@ -13,13 +16,17 @@ $( document ).ready(function () {
     $('#match-timer').html( currTime );
     var currPer = window.opener.$('#match-period').html();
     // console.log(currTime)
-    $('#match-period').html( currPer );
+    if (currPer == "Warm up") { 
+        $('#match-period').html( "W" );
+    } else {
+        $('#match-period').html( currPer );
+    }
 
     // Mutation observer approach
     // Team clock observer
     // console.log('Mutation observer!')
     observerConfig = {
-        attributes: true, 
+        attributes: true,
         childList: true, 
         characterData: true,
         subtree: true
@@ -31,7 +38,13 @@ $( document ).ready(function () {
         $('#match-timer').html( currTime );
         var currPer = window.opener.$('#match-period').html();
         // console.log(currTime)
-        $('#match-period').html( currPer );
+        if (currPer == "Warm up") { 
+            $('#match-period').html( "W" );
+        } else if (currPer.includes("next")) {
+            $('#match-period').html( "B" );
+        } else {
+            $('#match-period').html( currPer );
+        }
     });
     // console.log(observer)
     observer.observe(targetNode, observerConfig);

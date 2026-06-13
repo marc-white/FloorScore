@@ -330,7 +330,7 @@ function alterPeriod(inc) {
             if (isPlay) {
                 $('#match-period').text(period);
             } else {
-                $('#match-period').html(period+' next...');
+                $('#match-period').html(period+'+');
             }
         }
     }
