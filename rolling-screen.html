@@ -41,7 +41,8 @@ $( document ).ready(function () {
         if (currPer == "Warm up") { 
             $('#match-period').html( "W" );
         } else if (currPer.includes("next")) {
-            $('#match-period').html( "B" );
+            // $('#match-period').html( "U+" );
+             $('#match-period').html( "\u{1F964}" );
         } else {
             $('#match-period').html( currPer );
         }
