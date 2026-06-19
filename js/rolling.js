@@ -11,10 +11,10 @@ var warningGiven;
 // var scoreHome, scoreAway;
 
 // Set global default values
-noPeriods = 1;
-lenWarmup = 3;
-lenPeriod = 12;
-lenBreak = 1;
+noPeriods = 2;
+lenWarmup = 8;
+lenPeriod = 10;
+lenBreak = 2;
 // rollingClock = true;
 
 function resetGame( trigger_restart ) {
